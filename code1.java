@@ -7,5 +7,6 @@ public class Main{
         System.out.println("methawee suksri 6509611999");
         System.out.println("Paveewuth Prasithchayapon 6509681174");
         System.out.println("Punnathep Charoensit 6509611874");
+        System.out.println("Jennita Suttisaksunthron 6509611593");
     }
 }
