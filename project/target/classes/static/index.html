@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="red-border" >
+</div>
+<div class="yellow-border" >
+</div>
+
+<div class="container">
+    <div class="white-textbox">
+    <img src="logo.png" alt = "logo.png" width="332" height="72">
+    </div>
+<div class="w2-textbox" >
+    <div class="right" ><br>
+        <form onsubmit="login(); return false;">
+            <input type="text" id="ID" name="ID" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <button type="submit">></button>
+        </form>
+</div>
+</div>
+</div>
+
+<div class="container">
+    <div class="red-textbox">
+        <h4>สำนักงานทะเบียนนักศึกษา</h4>
+    </div>
+
+    <div class="grey-textbox">
+    </div>
+    </div>
+    </div>
+    </div>
+
+<img src="web.jpg" alt = "web.jpg" width="1457" height="600">
+<script>
+    function login() {
+    console.log('Login function called');
+    var username = document.getElementById("ID").value;
+    var password = document.getElementById("password").value;
+
+    var requestData = {
+        UserName: username,
+        PassWord: password
+    };
+
+    fetch('https://restapi.tu.ac.th/api/v1/auth/Ad/verify', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Application-Key': 'TUf3c29571c5346b85b65f136627d1fa89ca10853b1418e9a91845f3238c5a65fda045b29ea41cfd478d3f53426f4c44a0'
+        },
+        body: JSON.stringify(requestData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);  // Handle the response data
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+</script>
+</body>
+</html>

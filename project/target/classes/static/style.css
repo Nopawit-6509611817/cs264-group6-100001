@@ -1,0 +1,93 @@
+    body {
+        /*text-align: center;*/
+        font-family: 'Noto Sans Thai', sans-serif;
+    }
+
+/* ขอบสีแดง */
+    .red-border {
+         border: 5px solid #c3002f;
+    }
+
+/* ขอบสีเหลือง */
+    .yellow-border {
+        border: 20px solid #ffd13f;
+    }
+
+    .container{
+        display: flex;
+    }
+
+    .red-textbox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #c3002f;
+        color:white;
+        padding: 10px;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+    }
+    .grey-textbox{
+        flex: 1;
+        padding: 10px;
+        background-color: #384449;
+        padding: 10px;
+        width: 500px;
+        height: 30px;
+
+    }
+
+    .w2-textbox{
+            flex: 1;
+            padding: 10px;
+            background-color: #FFFFFF;
+            padding: 10px;
+            width: 500px;
+            height: 62px;
+
+        }
+
+    .white-textbox{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFFFFF;
+            color:white;
+            padding: 10px;
+            width: 332px;
+            height: 62px;
+            text-align: center;
+        }
+
+    .right {
+              text-align: right;
+              align-items: center;
+              align-items: center;
+              font-family: 'Noto Sans Thai', sans-serif;
+              margin-right: 50px;
+
+          }
+
+    #ID {
+            height: 20px;
+            border: 1px solid #D9D9D9;
+
+        }
+
+    #password {
+            height: 20px;
+            border: 1px solid #D9D9D9;
+         }
+
+      button {
+        /* Add your styling properties here */
+        background-color: #c3002f; /* Green background color */
+        color: solid #c3002f; /* White text color */
+        padding: 4px 8px; /* Padding for the button */
+        border: none; /* No border */
+        cursor: pointer; /* Cursor on hover */
+        color:white;
+      }
+
+
