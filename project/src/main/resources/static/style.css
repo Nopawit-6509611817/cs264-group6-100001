@@ -5,12 +5,16 @@
 
 /* ขอบสีแดง */
     .red-border {
-         border: 5px solid #c3002f;
+        width: 100%;
+        border: 5px solid #c3002f;
+        box-sizing: border-box;
     }
 
 /* ขอบสีเหลือง */
     .yellow-border {
+        width: 100%;
         border: 20px solid #ffd13f;
+        box-sizing: border-box;
     }
 
     .container{
@@ -33,7 +37,7 @@
         padding: 10px;
         background-color: #384449;
         padding: 10px;
-        width: 500px;
+        width: 100%;
         height: 30px;
 
     }
@@ -80,7 +84,7 @@
             border: 1px solid #D9D9D9;
          }
 
-      button {
+    button {
         /* Add your styling properties here */
         background-color: #40444c; /* Green background color */
         color: solid #c3002f; /* White text color */
@@ -88,6 +92,18 @@
         border: none; /* No border */
         cursor: pointer; /* Cursor on hover */
         color:white;
+      }
+
+    img {
+        max-height: 100%;
+        width: auto; 
+      }
+
+    .img-web {
+        max-width: 1920px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
       }
 
 
