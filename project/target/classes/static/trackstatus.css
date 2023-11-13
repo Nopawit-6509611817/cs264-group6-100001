@@ -1,0 +1,166 @@
+body {
+    /*text-align: center;*/
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* ขอบสีแดง */
+.red-border {
+    width: 100%;
+    border: 5px solid #c3002f;
+    box-sizing: border-box;
+}
+
+/* ขอบสีเหลือง */
+.yellow-border {
+    width: 100%;
+    border: 20px solid #ffd13f;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+}
+
+.red-textbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c3002f;
+    color:white;
+    padding: 10px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+.grey-textbox{
+    flex: 1;
+    padding: 10px;
+    background-color: #40444c;
+    width: 100%;
+    height: 30px;
+
+}
+
+.w2-textbox{
+        flex: 1;
+        padding: 10px;
+        background-color: #FFFFFF;
+        padding: 10px;
+        width: 500px;
+        height: 62px;
+
+    }
+
+.white-textbox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        color:white;
+        padding: 10px;
+        width: 332px;
+        height: 62px;
+        text-align: center;
+    }
+
+.right {
+          text-align: right;
+          align-items: center;
+          align-items: center;
+          font-family: 'Noto Sans Thai', sans-serif;
+          margin-right: 60px;
+          margin-top: -45px;
+
+
+      }
+
+#ID {
+        height: 20px;
+        border: 1px solid #D9D9D9;
+
+    }
+
+#password {
+        height: 20px;
+        border: 1px solid #D9D9D9;
+     }
+
+     button {
+        /* Add your styling properties here */
+        background-color: #40444c; /* Green background color */
+        color: white; /* White text color */
+        padding: 4px 8px; /* Padding for the button */
+        border: none; /* No border */
+        cursor: pointer; /* Cursor on hover */
+        height: 50px;
+        position: relative; /* Enable positioning */
+        top: -10px; /* Move the button up by 20px */
+        left: -11px;
+        width: 130px;
+    }
+#profile{
+    height:73px;
+    width: 73px;
+}
+#username{
+    position: absolute;
+    right: 170px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(200, 88, 88);
+}
+
+#username {
+    display: flex;
+    align-items: center;
+}
+
+.username-image {
+    margin-right: 10px; /* Adjust the margin as needed */
+    height: 20px;
+}
+
+#notification{
+    height: 20px;
+    width: 20px;
+   margin-right: 10px;
+}
+
+img {
+    max-height: 100%;
+    width: auto; 
+  }
+
+.img-web {
+    max-width: 1920px;
+width: 100%;
+height: auto;
+aspect-ratio: attr(width) / attr(height);
+    }
+
+#userForm{
+    margin-top: 40px;
+    text-align: center;
+}
+input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+#trackStatus{
+    background-color: #2c2e33;
+}
+
+#submit{
+     /* Add your styling properties here */
+     background-color: #40444c; /* Green background color */
+     color: solid #c3002f; /* White text color */
+     padding: 4px 8px; /* Padding for the button */
+     border: none; /* No border */
+     cursor: pointer; /* Cursor on hover */
+     color:white;
+     margin-left: 15px;
+     margin-right: 15px;
+     margin-top: 20px;
+     height: 40px;
+}

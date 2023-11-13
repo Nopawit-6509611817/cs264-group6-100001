@@ -3,14 +3,12 @@
 <head>
     <!--หน้าเมื่อloginเเล้ว-->
     <meta charset="UTF-8">
-    <title>ส</title>
-    <link rel="stylesheet" type="text/css" href="dashboard.css">
-
+    <title>ติดตามสถานะคำร้อง</title>
+    <link rel="stylesheet" type="text/css" href="trackstatus.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -19,13 +17,14 @@
 
 <div class="container">
     <div class="white-textbox">
-        <a href=""><img src="resouce/logo.png" onclick="toDashBoard()" alt="logo.png" width="332" height="72"></a>
+        <a onclick="toDashBoard()"><img src="resouce/logo.png" alt="logo.png" width="332" height="72"></a>
     </div>
 
-    <div>     <!--เอาusername ตอนlogin มาใส่ในusername-->
+    <div>
+        <!--เอาusername ตอนlogin มาใส่ในusername-->
         <div id="username">
-            <img src="resouce/notification.png" id="notification" alt="Image 1" >
-            <img src="resouce/messege.png" alt="Image 2" id="notification" >
+            <img src="resouce/notification.png" id="notification" alt="Image 1">
+            <img src="resouce/messege.png" alt="Image 2" id="notification">
             <p id="en-name"> username <!--เเก้ให้ตรงนี้--></p>
         </div>
     </div>
@@ -43,15 +42,19 @@
     </div>
 
     <div class="grey-textbox">
-        <button onclick="toRequest()">ส่งคำร้อง</button>
-        <button onclick="toTrackStatus()">ติดตามสถานะคำร้อง</button>
-        
+        <button onclick="request()" id="request">ส่งคำร้อง</button>
+        <button onclick="trackStatus()" id="trackStatus">ติดตามสถานะคำร้อง</button>
     </div>
 
-    
+    <!-- Add line break before the form tag -->
+  <br>
+
+   
 </div>
 
-<img class="img-web" src="resouce/web.jpg" alt="web.jpg" width="1457" height="600">
+
+
+
 <script>
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
@@ -67,20 +70,14 @@
 
     var nameFromForm1 = getQueryVariable("name");
 
-    document.getElementById("en-name").innerHTML = nameFromForm1;
-</script>
+    document.getElementById("en-name").innerHTML = nameFromForm1 ;
 
-<script>
-    function toRequest(){
+    function request(){
         window.location.href = "request.html?name=" + encodeURIComponent(nameFromForm1);
     }
 
     function toDashBoard(){
         window.location.href = "dashboard.html?name=" + encodeURIComponent(nameFromForm1);
-    }
-
-    function toTrackStatus(){
-        window.location.href = "trackstatus.html?name=" + encodeURIComponent(nameFromForm1);
     }
 </script>
 

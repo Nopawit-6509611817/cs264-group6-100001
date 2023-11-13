@@ -83,8 +83,22 @@
             height: 20px;
             border: 1px solid #D9D9D9;
          }
+    button{
+            /* Add your styling properties here */
+        background-color: #40444c; /* Green background color */
+        color: white; /* White text color */
+        padding: 4px 8px; /* Padding for the button */
+        border: none; /* No border */
+        cursor: pointer; /* Cursor on hover */
+        height: 50px;
+        position: relative; /* Enable positioning */
+        top: -10px; /* Move the button up by 20px */
+        left: -11px;
+        width: 130px;
+        
+    }
 
-    button {
+    #submit {
         /* Add your styling properties here */
         background-color: #40444c; /* Green background color */
         color: solid #c3002f; /* White text color */
@@ -94,6 +108,9 @@
         color:white;
         margin-left: 15px;
         margin-right: 15px;
+        width: 25px;
+        height: 25px;
+        top: 1px;
       }
 
     img {
@@ -107,5 +124,7 @@
     height: auto;
     aspect-ratio: attr(width) / attr(height);
       }
+
+
 
 
