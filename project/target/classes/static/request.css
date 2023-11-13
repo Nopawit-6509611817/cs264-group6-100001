@@ -146,6 +146,13 @@ input{
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding-left: 5px;
+    
 }
 #request{
     background-color: #2c2e33;
@@ -163,3 +170,31 @@ input{
      margin-top: 20px;
      height: 40px;
 }
+
+.k1{
+    margin-left: 50px;
+    position: relative;
+    left: -45px;
+}
+#reason{
+    width: 100px;
+}
+
+.k2{
+    position: relative;
+    right: 20px;
+}
+
+#permission1{
+    width: 70px;
+    height: 38px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.k0{
+    margin-top: 20px;
+}
+
+

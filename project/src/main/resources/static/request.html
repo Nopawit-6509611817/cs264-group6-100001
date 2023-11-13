@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>ส่งคำร้อง</title>
     <link rel="stylesheet" type="text/css" href="request.css">
-
+    <link rel="icon" type="image/x-icon" href="resouce/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
@@ -67,6 +67,46 @@
 
     <label for="date">Date:</label>
     <input type="date" id="date" name="date" required><br>
+
+    <div>
+        <div class="k0">
+            <label for="d" class="k1">ลำดับ</label>
+            <label for="d" class="k1">รหัสวิชา</label>
+            <label for="d" class="k1">ชื่อวิชา</label>
+            <label for="d" class="k1">Section</label>
+            <label for="d" class="k1">วัน/เวลา</label>
+            <label for="d" class="k1">หน่วยกิต</label>
+            <label for="d" class="k1">ชื่อผู้สอน</label>
+            <label for="d" class="k1">เพิ่ม/ถอน</label>
+        </div>
+
+        <label for="d" class="k2">1</label>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <select  id="permission1" name="addCode1" onclick="permission1" required>
+            <option value=""></option>
+            <option value="true">เพิ่ม</option>
+            <option  value="false" >ถอน</option>
+        </select>
+    </div>
+
+    <label for="d" class="k2">2</label>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <input id="reason" name="addCode1" required></input>
+        <select  id="permission1" name="addCode1" onclick="permission1" required>
+            <option value=""></option>
+            <option value="true">เพิ่ม</option>
+            <option  value="false" >ถอน</option>
+        </select>
+    </div><br>
 
     <button type="submit" id="submit">ส่งคำร้อง</button>
 </form>

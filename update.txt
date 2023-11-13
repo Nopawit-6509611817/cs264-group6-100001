@@ -1,4 +1,4 @@
-version 0.4.0   14/11 05.39
+version 0.4.1   14/11 05.39
 
 editor nopawit inon 6509611817
 
@@ -8,11 +8,17 @@ new
    + request.css
    + trackstatus.html
    + trackstatus.css
+   + favicon.png
    
    function
    + toDashboard()
    + toRequest()
    + toTrackStatus()
+
+   id
+   + teacher
+      username: 0000000000
+      password: 0000000000
 
 edit 
    file
