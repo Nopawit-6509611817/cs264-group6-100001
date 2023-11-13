@@ -8,5 +8,6 @@ public class Main{
         System.out.println("Paveewuth Prasithchayapon 6509681174");
         System.out.println("Punnathep Charoensit 6509611874");
         System.out.println("Jennita Suttisaksunthron 6509611593");
+        System.out.println("Nopawit Inon 6509611593");
     }
 }

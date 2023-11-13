@@ -36,7 +36,6 @@
         flex: 1;
         padding: 10px;
         background-color: #384449;
-        padding: 10px;
         width: 100%;
         height: 30px;
 
@@ -94,6 +93,8 @@
         border: none; /* No border */
         cursor: pointer; /* Cursor on hover */
         color:white;
+        margin-left: 15px;
+        margin-right: 15px;
       }
     #profile{
         height:73px;
