@@ -69,6 +69,10 @@
         console.log(data);  // Handle the response data
         if(data["message"]=="Success"){
             window.location.href = "dashboard.html?name=" + encodeURIComponent(data["displayname_en"]); }
+            else {
+                    // Display a popup for invalid username or password
+                    alert("Invalid username or password. Please try again.");
+                }
     })
     .catch(error => {
         console.error('Error:', error);
