@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!--หน้าเมื่อloginเเล้ว-->
     <meta charset="UTF-8">
@@ -12,66 +13,76 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
+    <div class="red-border"></div>
+    <div class="yellow-border"></div>
 
-<div class="red-border"></div>
-<div class="yellow-border"></div>
+    <div class="container">
+        <div class="white-textbox">
+            <img src="logo.png" alt="logo.png" width="332" height="72">
+        </div>
 
-<div class="container">
-    <div class="white-textbox">
-        <img src="logo.png" alt="logo.png" width="332" height="72">
-    </div>
+        <div> <!--เอาusername ตอนlogin มาใส่ในusername-->
+            <div id="username">
+                <img src="notification.png" id="notification" alt="Image 1">
+                <img src="messege.png" alt="Image 2" id="notification">
+                <p id="en-name"> username <!--เเก้ให้ตรงนี้--></p>
+            </div>
+        </div>
 
-    <div>     <!--เอาusername ตอนlogin มาใส่ในusername-->
-        <div id="username">
-            <img src="notification.png" id="notification" alt="Image 1" >
-            <img src="messege.png" alt="Image 2" id="notification" >
-            <p id="en-name"> username <!--เเก้ให้ตรงนี้--></p>
+        <div class="w2-textbox">
+            <div class="right"><br>
+                <p><img src="profile.png" alt="" id="profile"></p>
+                <br>
+            </div>
         </div>
     </div>
 
-    <div class="w2-textbox">
-        <div class="right"><br>
-            <p><img src="profile.png" alt="" id="profile"></p>
+    <div class="container">
+        <div class="grey-textbox2">
+            <h4>สำนักงานทะเบียนนักศึกษา</h4>
+        </div>
+            <button>ยื่นคำร้อง</button>
+        <div class="grey-textbox">
+            <button2>ติดตามสถานะคำร้อง</button2>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="grey-textbox2">
-        <h4>สำนักงานทะเบียนนักศึกษา</h4>
-    </div>
-
-    <div class="red-textbox">
-        <button onclick="submitRequest()">ยื่นคำร้องเพิ่ม-ถอน</button>
-    </div>
-    <div class="grey-textbox">
-        <button2 >ติดตามสถานะคำร้อง</button2>
-    </div>
-</div>
+    
 
 
+            <script>
+                function addRow() {
+                    var table = document.getElementById("myTable");
+                    var rowCount = table.rows.length;
+                    var row = table.insertRow(rowCount);
+                    var cellCount = table.rows[0].cells.length;
 
-    <div class="red-box">
-        <button>ยื่นคำร้อง</button>
-    </div>
-    <div class="grey2-box">
-        <button2>xxxxx</button2>
-    </div>
-    <div class="grey2-box">
-        <button2>xxxxx</button2>
-    </div>
-    <div class="grey2-box">
-        <button2>xxxxx</button2>
-    </div>
-    <div class="grey-box"></div>
+                    for (var i = 0; i < cellCount; i++) {
+                        var cell = row.insertCell(i);
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        input.required = true;
+                        cell.appendChild(input);
+                    }
+                }
 
+                function deleteRow() {
+                    var table = document.getElementById("myTable");
+                    var rowCount = table.rows.length;
 
-
+                    // ไม่ให้ลบแถวแรก
+                    if (rowCount >= 0) {
+                        table.deleteRow(rowCount - 1);
+                    }
+                }
+            </script>
 
 
 
 
 
 </body>
+
 </html>

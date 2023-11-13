@@ -1,74 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!--หน้าเมื่อloginเเล้ว-->
     <meta charset="UTF-8">
-    <title>dashboard</title>
+    <title>login</title>
     <link rel="stylesheet" type="text/css" href="dashboard.css">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
 
 </head>
+
 <body>
 
-<div class="red-border"></div>
-<div class="yellow-border"></div>
+    <div class="red-border"></div>
+    <div class="yellow-border"></div>
 
-<div class="container">
-    <div class="white-textbox">
-        <img src="logo.png" alt="logo.png" width="332" height="72">
-    </div>
+    <div class="container">
+        <div class="white-textbox">
+            <img src="logo.png" alt="logo.png" width="332" height="72">
+        </div>
 
-    <div>     <!--เอาusername ตอนlogin มาใส่ในusername-->
-        <div id="username">
-            <img src="notification.png" id="notification" alt="Image 1" >
-            <img src="messege.png" alt="Image 2" id="notification" >
-            <p id="en-name"> username <!--เเก้ให้ตรงนี้--></p>
+        <div> <!--เอาusername ตอนlogin มาใส่ในusername-->
+            <div id="username">
+                <img src="notification.png" id="notification" alt="Image 1">
+                <img src="messege.png" alt="Image 2" id="notification">
+                <p id="en-name"> username <!--เเก้ให้ตรงนี้--></p>
+            </div>
+        </div>
+
+        <div class="w2-textbox">
+            <div class="right"><br>
+                <p><img src="profile.png" alt="" id="profile"></p>
+            </div>
         </div>
     </div>
 
-    <div class="w2-textbox">
-        <div class="right"><br>
-            <p><img src="profile.png" alt="" id="profile"></p>
-        </div>
-    </div>
-</div>
 
-<div class="container">
-    <div class="red-textbox">
-        <h4>สำนักงานทะเบียนนักศึกษา</h4>
-    </div>
-    <div class="grey-textbox2">
-        <button onclick="submitRequest()">ยื่นคำร้องเพิ่ม-ถอน</button>
-    </div>
-    <div class="grey-textbox">
-        <button2>ติดตามสถานะคำร้อง</button2>
-    </div>
+    <ul>
+        <li><a><b>สำนักงานทะเบียนนักศึกษา</b></a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">ยื่นคำร้อง</a>
+            <div class="dropdown-content">
+                <a href="requestfinal.html">คำร้องเพิ่ม-ถอน</a>
+                <a href="#">xxx</a>
+                <a href="#">xxx</a>
+                <a href="#">xxx</a>
+            </div>
+        </li>
+        <li><a href="#news">ติดตามสถานะคำร้อง</a></li>
 
-</div>
+    </ul>
 
-<img class="img-web" src="web.jpg" alt="web.jpg" width="1457" height="600">
-<script>
-    function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split("&");
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split("=");
-            if (pair[0] == variable) {
-                return decodeURIComponent(pair[1]);
+
+
+
+
+
+
+    <script>
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
             }
+            return null;
         }
-        return null;
-    }
 
-    var nameFromForm1 = getQueryVariable("name");
+        var nameFromForm1 = getQueryVariable("name");
 
-    document.getElementById("en-name").innerHTML = nameFromForm1;
-</script>
+        document.getElementById("en-name").innerHTML = nameFromForm1;
+    </script>
 
 
 </body>
+
 </html>

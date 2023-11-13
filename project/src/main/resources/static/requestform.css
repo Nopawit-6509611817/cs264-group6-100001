@@ -40,12 +40,12 @@
            background-color: #384449;
            padding: 10px;
            width: 500px;
-           height: 30px;
+           height: 40px;
 
 
        }
 
-       .grey-textbox2{
+    .grey-textbox2{
            display: flex;
            align-items: center;
            justify-content: center;
@@ -53,7 +53,7 @@
            color:white;
            padding: 10px;
            width: 200px;
-           height: 30px;
+           height: 40px;
            text-align: center;
        }
 
@@ -89,8 +89,6 @@
 
           }
 
-
-
      button {
              /* Add your styling properties here */
              background-color:#c3002f; /* Green background color */
@@ -100,7 +98,7 @@
              cursor: pointer; /* Cursor on hover */
              color:white;
              font-family: 'Noto Sans Thai', sans-serif;
-             font-size: medium;
+             font-size: small ;
            }
 
            button2 {
@@ -161,6 +159,7 @@
 
 
         .red-box {
+            display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
@@ -175,7 +174,7 @@
         }
 
 
-        .grey-box {
+        .grey-box {         flex:1;
                             align-items: center;
                             justify-content: center;
                             text-align: center;
@@ -187,7 +186,7 @@
                             font-size: medium;
                         }
 
-        .grey2-box {
+        .grey2-box {        flex:1;
                             align-items: center;
                             justify-content: center;
                             text-align: center;
@@ -197,5 +196,109 @@
                             background-color: #384449;
                             font-size: medium;
                         }
+
+
+                        .white-rectangle {
+                            display : flex;
+                            
+                            width: 1000px; /* กว้างของกรอบสี่เหลี่ยม */
+                            height: 500px; /* สูงของกรอบสี่เหลี่ยม */
+                            background-color: #ffffffb6; /* สีของกรอบสี่เหลี่ยม (ขาว) */
+                            border: 1px solid #000000; /* เส้นขอบของกรอบสี่เหลี่ยม (ดำ) */
+                            background-color: white;
+                            padding: 20px;
+                            border-radius: 10px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            margin: 20px;
+                            margin-left: auto; /* ย้ายไปทางขวา */
+                            margin-right: 0;  
+                          }
+                        
+                          #myTable {
+                            border-collapse: collapse;
+                            max-width: 20%;
+                          }
+                        
+                          th, td {
+                            border: 1px solid black;
+                            padding: 3px;
+                            text-align: center;
+                          }
+                        
+                          th {
+                            background-color: #f2f2f2;
+                          }
+                        
+                          #studentFirstName,#studentLastName,#studentId,#studentYear,#studyField,#addressNumber,#moo,#tumbol,#amphur,#provice,#postalCode,#mobliePhone,#phone,#advisor,#action{
+                            display: inline-block;
+                            text-indent: 20px;
+                            margin-top: 10px; 
+                            margin-bottom: 10px;
+                          }
+                        
+                          .buttonadd_drop {
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+                            border-radius: 5px;
+                            text-align: center;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        
+                        .submit-button {
+                            background-color: #FFD13F; /* เปลี่ยนสีพื้นหลังของปุ่ม Submit เป็นสีเขียว */
+                            color: white; /* เปลี่ยนสีตัวอักษรของปุ่ม Submit เป็นสีขาว */
+                            border: none;
+                            padding: 10px 20px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+                            border-radius: 5px;
+                            align-items: center;
+                            justify-content: center;
+                        
+                        }
+                        
+                        .submit-button:hover {
+                            background-color: darkred; /* เปลี่ยนสีพื้นหลังของปุ่ม Submit เมื่อ hover เป็นสีเขียวเข้ม */
+                        }
+                        .row:after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                          }
+                          * {
+                            box-sizing: border-box;
+                          }
+                          .column {
+                            float: left;
+                            padding: 10px;
+                            height: 300px; /* Should be removed. Only for demonstration */
+                          }
+                          
+                          .left {
+                            width: 200px;
+                          }
+                          
+                          .right {
+                            width: 700px;
+                          }
+                          
+                          /* Clear floats after the columns */
+                          .row:after {
+                            content: "";
+                            display: table;
+                            clear: both;
+                          }
 
 

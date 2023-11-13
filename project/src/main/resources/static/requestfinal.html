@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--หน้าเมื่อloginเเล้ว-->
+    <meta charset="UTF-8">
+    <title>real request</title>
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- css อยู่นี่นะงับเตง-->
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+.white-rectangle {
+    width: 1200px; /* กว้างของกรอบสี่เหลี่ยม */
+    height: 500px; /* สูงของกรอบสี่เหลี่ยม */
+    background-color: #ffffffb6; /* สีของกรอบสี่เหลี่ยม (ขาว) */
+    border: 1px solid #000000; /* เส้นขอบของกรอบสี่เหลี่ยม (ดำ) */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+  }
+
+  #myTable {
+    border-collapse: collapse;
+    max-width: 20%;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  #studentFirstName,#studentLastName,#studentId,#studentYear,#studyField,#addressNumber,#moo,#tumbol,#amphur,#provice,#postalCode,#mobliePhone,#phone,#advisor,#action{
+    display: inline-block;
+    text-indent: 20px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+  }
+
+  .buttonadd {
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+
+.submit-button {
+    background-color: #FFD13F; /* เปลี่ยนสีพื้นหลังของปุ่ม Submit เป็นสีเขียว */
+    color: white; /* เปลี่ยนสีตัวอักษรของปุ่ม Submit เป็นสีขาว */
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+   
+
+}
+
+.submit-button:hover {
+    background-color: darkred; /* เปลี่ยนสีพื้นหลังของปุ่ม Submit เมื่อ hover เป็นสีเขียวเข้ม */
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="red-border"></div>
+    <div class="yellow-border"></div>
+
+    <div class="container">
+        <div class="white-textbox">
+            <img src="logo.png" alt="logo.png" width="332" height="72">
+        </div>
+
+        <div> <!--เอาusername ตอนlogin มาใส่ในusername-->
+            <div id="username">
+                <img src="notification.png" id="notification" alt="Image 1">
+                <img src="messege.png" alt="Image 2" id="notification">
+                <p id="en-name"> username <!--เเก้ให้ตรงนี้--></p>
+            </div>
+        </div>
+
+        <div class="w2-textbox">
+            <div class="right"><br>
+                <p><img src="profile.png" alt="" id="profile"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <ul>
+        <li><a><b>สำนักงานทะเบียนนักศึกษา</b></a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">ยื่นคำร้อง</a>
+            <div class="dropdown-content">
+                <a href="requestfinal.html">คำร้องเพิ่ม-ถอน</a>
+                <a href="#">xxx</a>
+                <a href="#">xxx</a>
+                <a href="#">xxx</a>
+            </div>
+        </li>
+        <li><a href="#news">ติดตามสถานะคำร้อง</a></li>
+
+    </ul>
+    <center>
+    <div class="white-rectangle"> 
+        <div class="firstLine">
+            <form>
+                <label for="studentFirstName">ชื่อจริง</label>
+                <input type="text" id="studentFirstName" name="studentFirstName" required>
+
+                <label for="studentLastName">นามสกุล</label>
+                <input type="text" id="studentLastName" name="studentLastName" required>
+
+                <label for="studentId">เลขทะเบียน:</label>
+                <input type="text" id="studentId" name="studentId" required pattern="\d{10}"
+                    placeholder="กรุณากรอกเลขทะเบียน 10 ตัวเลข">
+
+                <label for="studentYear">ชั้นปีที่</label>
+                <select id="studentYear" name="studentYear" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+
+                <label for="studyField">สาขาวิชา</label>
+                <select id="studyField" name="studyField" required>
+                    <option value="คณิตศาสตร์">คณิตศาสตร์</option>
+                    <option value="สถิติ">สถิติ</option>
+                    <option value="วิทยาศาสตร์และสิ่งแวดล้อม">วิทยาศาสตร์และสิ่งแวดล้อม</option>
+                    <option value="เทคโนโลยีเพื่อการพัฒนายั่งยืน">เทคโนโลยีเพื่อการพัฒนายั่งยืน</option>
+                    <option value="เทคโนโลยีการเกษตร">เทคโนโลยีการเกษตร</option>
+                    <option value="เคมี">เคมี</option>
+                    <option value="วิทยาศาสตร์และเทคโนโลยีการอาหาร">วิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+                    <option value="คณิตศาสตร์ประยุกต์">คณิตศาสตร์ประยุกต์</option>
+                    <option value="ฟิสิกส์อิเล็กทรอนิกส์">ฟิสิกส์อิเล็กทรอนิกส์</option>
+                    <option value="เทคโนโลยีชีวภาพ">เทคโนโลยีชีวภาพ</option>
+                    <option value="ฟิสิกส์">ฟิสิกส์</option>
+                    <option value="วัสดุศาสตร์">วัสดุศาสตร์</option>
+                    <option value="วิทยาศาสตร์และเทคโนโลยีสิ่งทอ">วิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+                    <option value="วิทยาการคอมพิวเตอร์">วิทยาการคอมพิวเตอร์</option>
+                </select>
+                <div class="secondLine">
+                    <label for="addressNumber">ที่อยู่ที่สามารถติดต่อได้ทางไปรษณีย์ บ้านเลขที่</label>
+                    <input type="text" id="addressNumber" name="addressNumber" required>
+
+                    <label for="moo">หมู่ที่</label>
+                    <input type="text" id="moo" name="moo" required placeholder="หากไม่มีให้เติม -">
+
+                    <label for="tumbol">ตำบล</label>
+                    <input type="text" id="tumbol" name="tumbol" required>
+
+                    <label for="amphur">อำเภอ</label>
+                    <input type="text" id="amphur" name="amphur" required>
+                </div>
+                <div class="thirdLine">
+                    <label for="province">จังหวัด</label>
+                    <input type="text" id="province" name="province" required>
+
+                    <label for="postalCode">รหัสไปรษณีย์</label>
+                    <input type="text" id="postalCode" name="postalCode" required pattern="\d{5}"
+                        placeholder="ต้องเป็นตัวเลข 5 หลัก">
+
+                    <label for="mobilePhone">โทรศัพท์มือถือ</label>
+                    <input type="text" id="mobilePhone" name="mobilePhone" required pattern="\d{5}"
+                        placeholder="ต้องเป็นตัวเลข 10 หลัก">
+
+                    <label for="phone">โทรศัพท์บ้าน (ถ้ามี)</label>
+                    <input type="text" id="phone" name="phone" pattern="\d{10}"
+                        placeholder="ถ้าใส่ต้องเป็นตัวเลข 10 หลัก">
+                </div>
+                <div class="fourthLine">
+                    <label for="advisor">อาจารย์ที่ปรึกษา</label>
+                    <input type="text" id="advisor" name="advisor" required>
+                    <label for="action">มีความประสงค์ขอ </label>
+                    <label>
+                        <input type="radio" name="operation" value="เพิ่ม" required> เพิ่ม
+                    </label>
+                    <label>
+                        <input type="radio" name="operation" value="ถอน"> ถอน
+                    </label>
+                    <label for="action">ดังรายการต่อไปนี้</label>
+                </div>
+            </form>
+            <br>
+            <table id="myTable">
+                <tr>
+                    <th>รหัสวิชา</th>
+                    <th>ชื่อวิชา</th>
+                    <th>Section</th>
+                    <th>วัน/เวลา</th>
+                    <th>หน่วยกิต</th>
+                    <th>ชื่อผู้สอน</th>
+                </tr>
+                <!-- ส่วนนี้เป็นตำแหน่งของแถวเริ่มต้น -->
+                <tr>
+                    <td><input type="text" id="subjectCode" name="subjectCode" required></td>
+                    <td><input type="text" id="subjectName" name="subjectName" required></td>
+                    <td><input type="text" id="subjectSection" name="subjectSection" required></td>
+                    <td><input type="text" id="subjectDate" name="subjectDate" required></td>
+                    <td><input type="text" id="subjectCredit" name="subjectCredit" required></td>
+                    <td><input type="text" id="subjectTeacher" name="subjectTeacher" required></td>
+                </tr>
+            </table>
+            <br>
+            <div class="buttonadd">
+                <button onclick="addRow()">เพิ่มแถว</button>
+                <button onclick="deleteRow()">ลบแถว</button>
+            </div>
+            <br>
+            <input type="submit" value="Submit" class="submit-button">
+       </div>
+    </div>
+    </center>
+</div>
+</div>
+
+
+
+<script>
+    function addRow() {
+        var table = document.getElementById("myTable");
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+        var cellCount = table.rows[0].cells.length;
+
+        for (var i = 0; i < cellCount; i++) {
+            var cell = row.insertCell(i);
+            var input = document.createElement("input");
+            input.type = "text";
+            input.required = true;
+            cell.appendChild(input);
+        }
+    }
+
+    function deleteRow() {
+        var table = document.getElementById("myTable");
+        var rowCount = table.rows.length;
+
+        // ไม่ให้ลบแถวแรก
+        if (rowCount >= 0) {
+            table.deleteRow(rowCount - 1);
+        }
+    }
+</script>
+
+
+
+
+
+
+    <script>
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+            return null;
+        }
+
+        var nameFromForm1 = getQueryVariable("name");
+
+        document.getElementById("en-name").innerHTML = nameFromForm1;
+    </script>
+
+
+</body>
+
+</html>
