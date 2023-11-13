@@ -1,0 +1,201 @@
+    body {
+        /*text-align: center;*/
+        font-family: 'Noto Sans Thai', sans-serif;
+
+    }
+
+/* ขอบสีแดง */
+    .red-border {
+        width: 100%;
+        border: 5px solid #c3002f;
+        box-sizing: border-box;
+    }
+
+/* ขอบสีเหลือง */
+    .yellow-border {
+        width: 100%;
+        border: 20px solid #ffd13f;
+        box-sizing: border-box;
+    }
+
+    .container{
+        display: flex;
+    }
+
+   .red-textbox{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background-color: #c3002f;
+           color:white;
+           padding: 10px;
+           width: 200px;
+           height: 30px;
+           text-align: center;
+       }
+       .grey-textbox{
+           display: flex;
+           flex: 1;
+           padding: 10px;
+           background-color: #384449;
+           padding: 10px;
+           width: 500px;
+           height: 30px;
+
+
+       }
+
+       .grey-textbox2{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background-color: #384449;
+           color:white;
+           padding: 10px;
+           width: 200px;
+           height: 30px;
+           text-align: center;
+       }
+
+    .w2-textbox{
+            flex: 1;
+            background-color: #FFFFFF;
+            padding: 10px;
+            width: 500px;
+            height: 62px;
+
+        }
+
+    .white-textbox{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFFFFF;
+            color:white;
+            padding: 10px;
+            width: 332px;
+            height: 62px;
+            text-align: center;
+        }
+
+    .right {
+              text-align: right;
+              align-items: center;
+              align-items: center;
+              font-family: 'Noto Sans Thai', sans-serif;
+              margin-right: 60px;
+              margin-top: -45px;
+
+
+          }
+
+
+
+     button {
+             /* Add your styling properties here */
+             background-color:#c3002f; /* Green background color */
+             color: solid #c3002f; /* White text color */
+             padding: 4px 8px; /* Padding for the button */
+             border: none; /* No border */
+             cursor: pointer; /* Cursor on hover */
+             color:white;
+             font-family: 'Noto Sans Thai', sans-serif;
+             font-size: medium;
+           }
+
+           button2 {
+             /* Add your styling properties here */
+             background-color:#384449;
+             color: solid #384449;
+             padding: 4px 8px; /* Padding for the button */
+             border: none; /* No border */
+             cursor: pointer; /* Cursor on hover */
+             color:white;
+             font-family: 'Noto Sans Thai', sans-serif;
+             font-size: medium;
+             align-items: center;
+             justify-content: center;
+             text-align: center;
+           }
+
+    #profile{
+        height:73px;
+        width: 73px;
+    }
+    #username{
+        position: absolute;
+        right: 170px;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(200, 88, 88);
+    }
+
+    #username {
+        display: flex;
+        align-items: center;
+    }
+
+    .username-image {
+        margin-right: 10px; /* Adjust the margin as needed */
+        height: 20px;
+    }
+
+    #notification{
+        height: 20px;
+        width: 20px;
+       margin-right: 10px;
+    }
+
+    img {
+        max-height: 100%;
+        width: auto;
+      }
+
+    .img-web {
+        max-width: 1920px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+        }
+
+
+
+        .red-box {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            width: 220px;
+            height: 50px;
+            background-color: #c3002f;
+            box-sizing: border-box;
+            font-size: medium;
+            color:white;
+
+        }
+
+
+        .grey-box {
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            padding: 10px;
+                            width: 220px;
+                            height: 1000px;
+                            background-color: #384449;
+                            box-sizing: border-box;
+                            font-size: medium;
+                        }
+
+        .grey2-box {
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                            padding: 10px;
+                            width: 200px;
+                            height: 50px;
+                            background-color: #384449;
+                            font-size: medium;
+                        }
+
+
