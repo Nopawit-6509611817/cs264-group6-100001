@@ -4,7 +4,7 @@
     <!--หน้าเมื่อloginเเล้ว-->
     <meta charset="UTF-8">
     <title>TU-main</title>
-    <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <link rel="stylesheet" type="text/css" href="teacher.css">
     <link rel="icon" type="image/x-icon" href="picture/favicon.png">
 
 
@@ -44,12 +44,11 @@
     </div>
 
     <div class="grey-textbox">
-        <button onclick="toRequest()">ส่งคำร้อง</button>
-        <button onclick="toTrackStatus()">ติดตามสถานะคำร้อง</button>
+        <button onclick="toRequest()">คำร้องของนักศึกษา</button>
+        <button onclick="toTrackStatus()">xxxxxxx</button>
         
     </div>
 
-    
 </div>
 
 <img class="img-web" src="picture/web.jpg" alt="web.jpg" width="1457" height="600">
@@ -73,11 +72,11 @@
 
 <script>
     function toRequest(){
-        window.location.href = "request.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "approve.html?name=" + encodeURIComponent(nameFromForm1);
     }
 
     function toDashBoard(){
-        window.location.href = "dashboard.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "teaher.html?name=" + encodeURIComponent(nameFromForm1);
     }
 
     function toTrackStatus(){

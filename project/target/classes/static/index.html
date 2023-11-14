@@ -20,7 +20,7 @@
 
 <div class="container">
     <div class="white-textbox">
-    <a href=""><img src="resouce/logo.png" alt = "logo.png" width="332" height="72"></a>
+    <a href=""><img src="picture/logo.png" alt = "logo.png" width="332" height="72"></a>
     </div>
 <div class="w2-textbox" >
     <div class="right" ><br>
@@ -46,7 +46,7 @@
     </div>
     </div>
 
-    <img class="img-web" src="resouce/web.jpg" alt="web.jpg" width="1457" height="600">
+    <img class="img-web" src="picture/web.jpg" alt="web.jpg" width="1457" height="600">
 <script>
     function login() {
     console.log('Login function called');
@@ -54,7 +54,9 @@
     var password = document.getElementById("password").value;
 
     if(username=="0000000000" && password=="0000000000"){
-            window.location.href = "dashboard.html?name=" + encodeURIComponent("teacher"); }
+            window.location.href = "teacher.html?name=" + encodeURIComponent("teacher1"); }
+    else if(username=="1111111111" && password=="1111111111"){
+            window.location.href = "teacher.html?name=" + encodeURIComponent("teacher2"); }
  
 
     var requestData = {

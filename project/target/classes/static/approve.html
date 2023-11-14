@@ -3,15 +3,12 @@
 <head>
     <!--หน้าเมื่อloginเเล้ว-->
     <meta charset="UTF-8">
-    <title>TU-main</title>
-    <link rel="stylesheet" type="text/css" href="dashboard.css">
-    <link rel="icon" type="image/x-icon" href="picture/favicon.png">
-
-
+    <title>ส่งคำร้อง</title>
+    <link rel="stylesheet" type="text/css" href="request.css">
+    <link rel="icon" type="image/x-icon" href="resouce/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -20,13 +17,14 @@
 
 <div class="container">
     <div class="white-textbox">
-        <a href=""><img src="picture/logo.png" onclick="toDashBoard()" alt="logo.png" width="332" height="72"></a>
+        <a onclick="toDashBoard()"><img src="picture/logo.png" alt="logo.png" width="332" height="72"></a>
     </div>
 
-    <div>     <!--เอาusername ตอนlogin มาใส่ในusername-->
+    <div>
+        <!--เอาusername ตอนlogin มาใส่ในusername-->
         <div id="username">
-            <img src="picture/notification.png" id="notification" alt="Image 1" >
-            <img src="picture/messege.png" alt="Image 2" id="notification" >
+            <img src="picture/notification.png" id="notification" alt="Image 1">
+            <img src="picture/messege.png" alt="Image 2" id="notification">
             <p id="en-name"> username <!--เเก้ให้ตรงนี้--></p>
         </div>
     </div>
@@ -44,15 +42,19 @@
     </div>
 
     <div class="grey-textbox">
-        <button onclick="toRequest()">ส่งคำร้อง</button>
-        <button onclick="toTrackStatus()">ติดตามสถานะคำร้อง</button>
-        
+        <button onclick="toRequest()" id="request">คำร้องของนักศึกษา</button>
+        <button>xxxxxxx</button>
     </div>
 
-    
+    <!-- Add line break before the form tag -->
+  <br>
+
+   
 </div>
 
+
 <img class="img-web" src="picture/web.jpg" alt="web.jpg" width="1457" height="600">
+
 <script>
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
@@ -68,21 +70,17 @@
 
     var nameFromForm1 = getQueryVariable("name");
 
-    document.getElementById("en-name").innerHTML = nameFromForm1;
-</script>
+    document.getElementById("en-name").innerHTML = nameFromForm1 ;
 
-<script>
     function toRequest(){
-        window.location.href = "request.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "approve.html?name=" + encodeURIComponent(nameFromForm1);
     }
 
     function toDashBoard(){
-        window.location.href = "dashboard.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "teacher.html?name=" + encodeURIComponent(nameFromForm1);
     }
 
-    function toTrackStatus(){
-        window.location.href = "trackstatus.html?name=" + encodeURIComponent(nameFromForm1);
-    }
+    
 </script>
 
 </body>

@@ -4,28 +4,24 @@ editor nopawit inon 6509611817
 
 new 
    file
-   + request.html
-   + request.css
-   + trackstatus.html
-   + trackstatus.css
-   + favicon.png
+   + teacher.html
+   + teacher.css
+   + approve.html
+   + approve.css
    
-   function
-   + toDashboard()
-   + toRequest()
-   + toTrackStatus()
 
    id
-   + teacher
-      username: 0000000000
-      password: 0000000000
+   + teacher2
+      username: 1111111111
+      password: 1111111111
 
 edit 
    file
    * index.html
-   * style.css
    * dashboard.html
-   * dashboard.css
+   * trackstatus.html
+   * request.html
+
 
 
    
