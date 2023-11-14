@@ -24,13 +24,15 @@ public class Request {
     private String type2;
     private String advisorApprove2;
     private String teacherApprove2;
+    private String cause1;
+    private String cause2;
 
 
     public Request(long studentID, String studentFirstName, String studentLastName, int studentYear,
                    String studentBranch, String date, String advisor, String subjectCode1, String subjectName1,
                    String section1, String dayTime1, String teacher1, String type1, String advisorApprove1,
                    String teacherApprove1, String subjectCode2, String subjectName2, String section2,
-                   String dayTime2, String teacher2, String type2, String advisorApprove2, String teacherApprove2) {
+                   String dayTime2, String teacher2, String type2, String advisorApprove2, String teacherApprove2, String cause1, String cause2) {
         this.studentID = studentID;
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
@@ -54,6 +56,8 @@ public class Request {
         this.type2 = type2;
         this.advisorApprove2 = advisorApprove2;
         this.teacherApprove2 = teacherApprove2;
+        this.cause1 = cause1;
+        this.cause2 = cause2;
     }
 
 
@@ -72,9 +76,24 @@ public class Request {
     public void setStudentFirstName(String studentFirstName) {
         this.studentFirstName = studentFirstName;
     }
+    public void setCause1(String cause1){
+        this.cause1 = cause1;
+    }
+
+    public void setCause2(String cause2){
+        this.cause2 = cause2;
+    }
 
     public String getStudentLastName() {
         return studentLastName;
+    }
+
+    public String getCause1() {
+        return cause1;
+    }
+
+    public String getCause2() {
+        return cause2;
     }
 
     public void setStudentLastName(String studentLastName) {
