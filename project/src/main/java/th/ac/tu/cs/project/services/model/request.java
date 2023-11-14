@@ -1,6 +1,6 @@
 package th.ac.tu.cs.project.services.model;
 
-public class request {
+public class Request {
     private long studentID;
     private String studentFirstName;
     private String studentLastName;
@@ -26,7 +26,7 @@ public class request {
     private String teacherApprove2;
 
 
-    public request(long studentID, String studentFirstName, String studentLastName, int studentYear,
+    public Request(long studentID, String studentFirstName, String studentLastName, int studentYear,
                    String studentBranch, String date, String advisor, String subjectCode1, String subjectName1,
                    String section1, String dayTime1, String teacher1, String type1, String advisorApprove1,
                    String teacherApprove1, String subjectCode2, String subjectName2, String section2,

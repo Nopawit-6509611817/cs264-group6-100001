@@ -1,48 +1,21 @@
 package th.ac.tu.cs.project.services.repository;
-import org.apache.coyote.Request;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 
 
 import java.util.List;
 
-@Repository
-public class RequestRepository implements  JdbcRequestRepository{
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+import th.ac.tu.cs.project.services.model.Request;
 
-    @Override
-    public int save(Request request) {
-        return 0;
-    
-    }
+public interface RequestRepository {
+    int save(Request request);
 
-    @Override
-    public int update(Request request) {
-        return 0;
-    }
+    int update(Request request);
 
-    @Override
-    public Request findByStudentId(long studentID) {
-        return null;
-    }
+    Request findByStudentId(long studentID);
 
-    @Override
-    public int deleteByStudentId(long studentID) {
-        return 0;
-    }
+    int deleteByStudentId(long studentID);
 
-    @Override
-    public List<Request> findAll() {
-        return null;
-    }
+    List<th.ac.tu.cs.project.services.model.Request> findAll();
 
-    @Override
-    public int deleteAll() {
-        return 0;
-    }
+    int deleteAll();
 }
-
