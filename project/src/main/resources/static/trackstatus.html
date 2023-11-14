@@ -38,17 +38,23 @@
 </div>
 
 <div class="container">
-    <div class="red-textbox">
-        <h4>สำนักงานทะเบียนนักศึกษา</h4>
-    </div>
+    
 
-    <div class="grey-textbox">
-        <button onclick="request()" id="request">ส่งคำร้อง</button>
-        <button onclick="trackStatus()" id="trackStatus">ติดตามสถานะคำร้อง</button>
-    </div>
+    <ul>
+        <li><a onclick="toDashBoard()">สำนักงานทะเบียนนักศึกษา</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn" id="request">ยื่นคำร้อง</a>
+            <div class="dropdown-content">
+                <a onclick="toRequest()">คำร้องเพิ่ม-ถอน</a>
+                <a href="#">xxx</a>
+                <a href="#">xxx</a>
+                <a href="#">xxx</a>
+            </div>
+        </li>
+        <li><a href="#news" onclick="toTrackStatus()" id="trackStatus"><b>ติดตามสถานะคำร้อง</b></a></li>
 
-    <!-- Add line break before the form tag -->
-  <br>
+    </ul>
+    
 
    
 </div>
@@ -73,7 +79,7 @@
 
     document.getElementById("en-name").innerHTML = nameFromForm1 ;
 
-    function request(){
+    function toRequest(){
         window.location.href = "request.html?name=" + encodeURIComponent(nameFromForm1);
     }
 

@@ -37,17 +37,26 @@
 </div>
 
 <div class="container">
-    <div class="red-textbox">
-        <h4>สำนักงานทะเบียนนักศึกษา</h4>
-    </div>
 
-    <div class="grey-textbox">
-        <button onclick="toRequest()" id="request">ส่งคำร้อง</button>
-        <button onclick="toTrackStatus()">ติดตามสถานะคำร้อง</button>
-    </div>
 
+  
+    <ul>
+        <li><a onclick="toDashBoard()" id="ok">สำนักงานทะเบียนนักศึกษา</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn" id="request"><b>ยื่นคำร้อง</b></a>
+            <div class="dropdown-content">
+                <a onclick="toRequest()">คำร้องเพิ่ม-ถอน</a>
+                <a href="#">xxx</a>
+                <a href="#">xxx</a>
+                <a href="#">xxx</a>
+            </div>
+        </li>
+        <li><a href="#news" onclick="toTrackStatus()">ติดตามสถานะคำร้อง</a></li>
+
+    </ul>
+    
     <!-- Add line break before the form tag -->
-  <br>
+
 
    
 </div>
@@ -59,6 +68,9 @@
     <label for="lastName">นามสกุล:</label>
     <input type="text" id="lastName" name="lastName" required><br>
 
+    <label for="lastName">เลขนักศึกษา:</label>
+    <input type="text" id="studentID" name="studentID" required><br>
+
     <label for="class">สาขา:</label>
     <input type="text" id="class" name="class" required><br>
 
@@ -68,6 +80,9 @@
     <label for="date">Date:</label>
     <input type="date" id="date" name="date" required><br>
 
+    <label for="lastName">อาจารย์ที่ปรึกษา:</label>
+    <input type="text" id="advisor" name="advisor" required><br>
+
     <div>
         <div class="k0">
             <label for="d" class="k1">ลำดับ</label>
@@ -76,10 +91,12 @@
             <label for="d" class="k1">Section</label>
             <label for="d" class="k1">วัน/เวลา</label>
             <label for="d" class="k1">ชื่อผู้สอน</label>
+            <label for="d" class="k1">เหตุผล</label>
             <label for="d" class="k1">เพิ่ม/ถอน</label>
         </div>
 
         <label for="d" class="k2">1</label>
+        <input id="reason" name="addCode1" required></input>
         <input id="reason" name="addCode1" required></input>
         <input id="reason" name="addCode1" required></input>
         <input id="reason" name="addCode1" required></input>
@@ -138,6 +155,21 @@
     function toTrackStatus(){
         window.location.href = "trackstatus.html?name=" + encodeURIComponent(nameFromForm1);
     }
+</script>
+
+<script>
+    function submitForm(event) {  // หยุดการส่งคำร้องข้อมูลแบบปกติของฟอร์ม
+    const date = document.getElementById("date").value;
+    const studentFirstName =  document.getElementById("firstName").value;
+    const studentLastName = document.getElementById("lastName").value;
+    const studentId = document.getElementById("studentID").value;
+    const studentYear = document.getElementById("year").value;
+    const studentBranch = document.getElementById("class").value;
+    const advisor = document.getElementById("advisor").value;
+    const phone = document.getElementById("homeNumber").value;
+    const cause = document.getElementById("reason").value;
+    const addSubjectList = document.getElementById("reason").value;
+    const dropSubjectList = document.getElementById("reason").value;}
 </script>
 
 </body>
