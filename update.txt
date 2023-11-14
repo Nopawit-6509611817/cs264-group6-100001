@@ -1,26 +1,12 @@
-version 0.4.1   14/11 05.39
+version 0.4.2   14/11 05.39
 
 editor nopawit inon 6509611817
 
 new 
    file
-   + teacher.html
-   + teacher.css
-   + approve.html
-   + approve.css
+   + model.java
    
 
-   id
-   + teacher2
-      username: 1111111111
-      password: 1111111111
-
-edit 
-   file
-   * index.html
-   * dashboard.html
-   * trackstatus.html
-   * request.html
 
 
 
