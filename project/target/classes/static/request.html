@@ -61,21 +61,21 @@
    
 </div>
 
-<form action="#" method="post" id="userForm">
+<form  id="userForm" onsubmit="submitForm(event)">
     <label for="firstName">ชื่อ:</label>
     <input type="text" id="firstName" name="firstName" required><br>
 
     <label for="lastName">นามสกุล:</label>
     <input type="text" id="lastName" name="lastName" required><br>
 
-    <label for="lastName">เลขนักศึกษา:</label>
-    <input type="text" id="studentID" name="studentID" required><br>
+    <label for="studentID">เลขนักศึกษา:</label>
+    <input type="number" id="studentID" name="studentID" required><br>
 
     <label for="class">สาขา:</label>
     <input type="text" id="class" name="class" required><br>
 
     <label for="year">ปี:</label>
-    <input type="text" id="year" name="year" required><br>
+    <input type="number" id="year" name="year" required><br>
 
     <label for="date">Date:</label>
     <input type="date" id="date" name="date" required><br>
@@ -96,13 +96,13 @@
         </div>
 
         <label for="d" class="k2">1</label>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <select  id="permission1" name="addCode1" onclick="permission1" required>
+        <input id="subjectCode1" name="subjectCode1" class="reason" required></input>
+        <input id="subjectName1" name="subjectName1" class="reason" required></input>
+        <input id="section1" name="section1" class="reason" required></input>
+        <input id="dayTime1" name="dayTime1" class="reason" required></input>
+        <input id="teacher1" name="teacher1" class="reason" required></input>
+        <input id="cause1" name="cause1" class="reason"  required></input>
+        <select  id="type1" name="type1" onclick="permission1" class="permission1" required>
             <option value=""></option>
             <option value="true">เพิ่ม</option>
             <option  value="false" >ถอน</option>
@@ -110,13 +110,13 @@
     </div>
 
     <label for="d" class="k2">2</label>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <input id="reason" name="addCode1" required></input>
-        <select  id="permission1" name="addCode1" onclick="permission1" required>
+        <input id="subjectCode2" name="subjectCode2" class="reason" required></input>
+        <input id="subjectName2" name="subjectName2" class="reason" required></input>
+        <input id="section2" name="section2" class="reason" required></input>
+        <input id="dayTime2" name="dayTime2" class="reason" required></input>
+        <input id="teacher2" name="teacher2" class="reason" required></input>
+        <input id="cause2" name="cause2" class="reason" required></input>
+        <select  class="permission1" name="type2" id="type2" onclick="permission1" required>
             <option value=""></option>
             <option value="true">เพิ่ม</option>
             <option  value="false" >ถอน</option>
@@ -141,19 +141,20 @@
     }
 
     var nameFromForm1 = getQueryVariable("name");
+    var username = getQueryVariable("username");
 
     document.getElementById("en-name").innerHTML = nameFromForm1 ;
 
     function toRequest(){
-        window.location.href = "request.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "request.html?name=" + encodeURIComponent(nameFromForm1) + "&username=" + encodeURIComponent(username);
     }
 
     function toDashBoard(){
-        window.location.href = "dashboard.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "dashboard.html?name=" + encodeURIComponent(nameFromForm1)+ "&username=" + encodeURIComponent(username);
     }
 
     function toTrackStatus(){
-        window.location.href = "trackstatus.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "trackstatus.html?name=" + encodeURIComponent(nameFromForm1)+ "&username=" + encodeURIComponent(username);
     }
 </script>
 
@@ -166,10 +167,77 @@
     const studentYear = document.getElementById("year").value;
     const studentBranch = document.getElementById("class").value;
     const advisor = document.getElementById("advisor").value;
-    const phone = document.getElementById("homeNumber").value;
-    const cause = document.getElementById("reason").value;
-    const addSubjectList = document.getElementById("reason").value;
-    const dropSubjectList = document.getElementById("reason").value;}
+    const subjectCode1 = document.getElementById("subjectCode1").value;
+    const subjectName1 = document.getElementById("subjectName1").value;
+    const section1 = document.getElementById("section1").value;
+    const dayTime1 = document.getElementById("dayTime1").value;
+    const teacher1 = document.getElementById("teacher1").value;
+    const type1 = document.getElementById("type1").value;
+    const teacherApprove1 = "asd";
+    const advisorApprove1 = "asd";
+    const subjectCode2 = document.getElementById("subjectCode2").value;
+    const subjectName2 = document.getElementById("subjectName2").value;
+    const section2 = document.getElementById("section2").value;
+    const dayTime2 = document.getElementById("dayTime2").value;
+    const teacher2 = document.getElementById("teacher2").value;
+    const type2 = document.getElementById("type2").value;
+    const teacherApprove2 = "asd";
+    const advisorApprove2 = "asd";
+    const cause1 = document.getElementById("cause1").value;
+    const cause2 = document.getElementById("cause2").value;
+  
+    const data = {
+    studentID: 6509611817,
+    studentFirstName: studentFirstName,
+    studentLastName: studentLastName,
+    studentYear: 2,
+    studentBranch: studentBranch,
+    date: date,
+    advisor: advisor,
+    subjectCode1: subjectCode1,
+    subjectName1: subjectName1,
+    section1: section1,
+    dayTime1: dayTime1,
+    teacher1: teacher1,
+    type1: type1,
+    teacherApprove1: teacherApprove1,
+    advisorApprove1: advisorApprove1,
+    subjectCode2: subjectCode2,
+    subjectName2: subjectName2,
+    section2: section2,
+    dayTime2: dayTime2,
+    teacher2: teacher2,
+    type2: type2,
+    teacherApprove2: teacherApprove2,
+    advisorApprove2: advisorApprove2,
+    cause1: cause1,
+    cause2: cause2
+    };
+
+
+    const jsonData = JSON.stringify(data);
+
+const xhr = new XMLHttpRequest();
+xhr.open("POST", "/request0000", true);
+xhr.setRequestHeader("Content-Type", "application/json");
+
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 201) {
+        console.log("ส่งข้อมูลสำเร็จ");
+        console.log(data);
+        // ทำสิ่งที่คุณต้องการเมื่อส่งข้อมูลสำเร็จ
+    } else if (xhr.readyState === 4 && xhr.status !== 201) {
+        console.error("เกิดข้อผิดพลาดในการส่งข้อมูล");
+        // ทำสิ่งที่คุณต้องการเมื่อเกิดข้อผิดพลาดในการส่งข้อมูล
+    }
+
+};
+
+xhr.send(jsonData);
+alert('บันทึกเเล้ว');
+return false
+}
+
 </script>
 
 </body>

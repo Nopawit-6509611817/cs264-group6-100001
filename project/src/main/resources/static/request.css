@@ -179,7 +179,7 @@ input{
     position: relative;
     left: -45px;
 }
-#reason{
+.reason{
     width: 100px;
 }
 
@@ -188,7 +188,7 @@ input{
     right: 20px;
 }
 
-#permission1{
+.permission1{
     width: 70px;
     height: 38px;
     margin-bottom: 10px;

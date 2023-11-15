@@ -13,6 +13,9 @@ public interface RequestRepository {
 
     Request findByStudentId(long studentID);
 
+    List<Request> findByStudentIdForteacher(String teacherName);
+
+
     int deleteByStudentId(long studentID);
 
     List<th.ac.tu.cs.project.services.model.Request> findAll();

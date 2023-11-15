@@ -79,21 +79,22 @@
     }
 
     var nameFromForm1 = getQueryVariable("name");
+    var username = getQueryVariable("username");
 
     document.getElementById("en-name").innerHTML = nameFromForm1;
 </script>
 
 <script>
     function toRequest(){
-        window.location.href = "request.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "request.html?name=" + encodeURIComponent(nameFromForm1) + "&username=" + encodeURIComponent(username);
     }
 
     function toDashBoard(){
-        window.location.href = "dashboard.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "dashboard.html?name=" + encodeURIComponent(nameFromForm1) + "&username=" + encodeURIComponent(username);
     }
 
     function toTrackStatus(){
-        window.location.href = "trackstatus.html?name=" + encodeURIComponent(nameFromForm1);
+        window.location.href = "trackstatus.html?name=" + encodeURIComponent(nameFromForm1) + "&username=" + encodeURIComponent(username);
     }
 </script>
 

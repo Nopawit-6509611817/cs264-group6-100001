@@ -227,3 +227,71 @@ a{
 trackStatus{
     background-color: #c3002f;
 }
+
+#ok{
+    height: 100px;
+
+}
+
+.white-layer {
+    background-color: white; /* กำหนดสีพื้นหลังของ layer เป็นขาว */
+    position: absolute; /* กำหนดให้ layer อยู่ในตำแหน่งที่คงที่ตลอดเวลา */
+    top: 220px; /* กำหนดให้อยู่ด้านบน */
+    left: 50px; /* กำหนดให้อยู่ด้านซ้าย */ /* กำหนดความกว้างเต็มหน้าจอ */
+    height: 650px; /* กำหนดความสูงเต็มหน้าจอ */
+    z-index: 1; /* กำหนดให้อยู่บนสุด */
+    border-radius: 5px;
+    width: 1420px;
+}
+
+#topic{
+    text-align: center;
+    margin-top: 40px;
+    background-color: yellow;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 25px;
+    border-radius: 5px;
+    
+}
+
+#display{
+    text-align: center;
+    margin-top: 40px;
+    background-color: rgb(219, 219, 25);
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 50px;
+    
+}
+.detail {
+    float:left;
+    width:100px;
+    height:100px;
+    text-align:center;
+    margin-left: 15px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+#small-circle1 {
+    width: 20px; /* กำหนดความกว้างของวงกลม */
+    height: 20px; /* กำหนดความสูงของวงกลม */
+    background-color: rgb(68, 0, 255); /* กำหนดสีพื้นหลังของวงกลม */
+    border-radius: 50%; /* กำหนดให้มีเส้นรอบวงเพื่อทำให้เป็นวงกลม */
+    display: inline-block; /* กำหนดให้ element เป็น inline-block เพื่อให้สามารถวางบนบรรทัดเดียวกันได้ */
+}
+
+#small-circle2 {
+    width: 20px; /* กำหนดความกว้างของวงกลม */
+    height: 20px; /* กำหนดความสูงของวงกลม */
+    background-color: rgb(68, 0, 255); /* กำหนดสีพื้นหลังของวงกลม */
+    border-radius: 50%; /* กำหนดให้มีเส้นรอบวงเพื่อทำให้เป็นวงกลม */
+    display: inline-block; /* กำหนดให้ element เป็น inline-block เพื่อให้สามารถวางบนบรรทัดเดียวกันได้ */
+}

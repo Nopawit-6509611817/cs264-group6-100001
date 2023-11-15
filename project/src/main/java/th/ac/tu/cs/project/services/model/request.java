@@ -60,6 +60,9 @@ public class Request {
         this.cause2 = cause2;
     }
 
+    public Request(){
+
+    }
 
     public long getStudentID() {
         return studentID;
