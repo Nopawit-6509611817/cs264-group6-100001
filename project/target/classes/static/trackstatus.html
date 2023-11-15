@@ -47,7 +47,8 @@
         }
         if(data["advisorApprove2"]=="approve"&&data["teacherApprove2"]=="approve"){
             document.getElementById("status2").innerHTML = "approve";
-            document.getElementById("small-circle2").style.backgroundColor = "red";       }
+            document.getElementById("small-circle2").style.backgroundColor = "yellow";       
+        }
             else if(data["advisorApprove2"]=="notapprove"&&data["teacherApprove2"]=="notapprove"){
                 document.getElementById("status2").innerHTML = "notapprove";
                 document.getElementById("small-circle2").style.backgroundColor = "red";
@@ -80,20 +81,20 @@
         }
         if(data["advisorApprove1"]=="approve"&&data["teacherApprove1"]=="approve"){
             document.getElementById("status1").innerHTML = "approve";
-            document.getElementById("small-circle2").style.backgroundColor = "red";
+            document.getElementById("small-circle1").style.backgroundColor = "red";
         }
             else if(data["advisorApprove1"]=="notapprove"&&data["teacherApprove1"]=="notapprove"){
                 document.getElementById("status1").innerHTML = "notapprove";
-                document.getElementById("small-circle2").style.backgroundColor = "red";
+                document.getElementById("small-circle1").style.backgroundColor = "red";
 
             }
             else if(data["advisorApprove1"]=="approve"&&data["teacherApprove1"]=="notapprove"){
                 document.getElementById("status1").innerHTML = "notapprove";
-                document.getElementById("small-circle2").style.backgroundColor = "red";
+                document.getElementById("small-circle1").style.backgroundColor = "red";
             }
             else if(data["advisorApprove1"]=="notapprove"&&data["teacherApprove1"]=="approve"){
                 document.getElementById("status1").innerHTML = "notapprove";
-                document.getElementById("small-circle2").style.backgroundColor = "red";
+                document.getElementById("small-circle1").style.backgroundColor = "red";
             }
             else{
                 document.getElementById("status1").innerHTML = "waiting";

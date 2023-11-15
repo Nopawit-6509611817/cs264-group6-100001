@@ -1,4 +1,4 @@
-version 0.6.0   15/11 08.37
+version 0.6.1   15/11 16.10
 
 editor nopawit inon 6509611817
 

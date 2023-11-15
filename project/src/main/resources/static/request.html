@@ -234,7 +234,10 @@ xhr.onreadystatechange = function () {
 };
 
 xhr.send(jsonData);
+toRequest();
 alert('บันทึกเเล้ว');
+event.preventDefault();
+toRequest();
 return false
 }
 

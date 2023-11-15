@@ -29,7 +29,6 @@
 
 var i = 0;
     var nameFromForm1 = getQueryVariable("name");
-
     var d = "asd" ;
 
     function approve(i, num) {
@@ -41,7 +40,19 @@ var i = 0;
         headers: {
             'Content-Type': 'application/json'
         }
-    })}
+    })
+
+    if(x[i]["advisor"]==x[i]["teacher1"]){
+        fetch('http://localhost:8080/approve/teacher1/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    }
+
+}
 
     if(num==2){
     fetch('http://localhost:8080/approve/advisor2/' +x[i]["studentID"], {
@@ -49,7 +60,18 @@ var i = 0;
         headers: {
             'Content-Type': 'application/json'
         }
-    })}
+    })
+    if(x[i]["advisor"]==x[i]["teacher2"]){
+        fetch('http://localhost:8080/approve/teacher2/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    }
+
+}
 
     
   }
@@ -75,21 +97,45 @@ var i = 0;
 function refuse(i, num) {
   
     if(x[i]["advisor"]==nameFromForm1){
-    if(num==1){
+        if(num==1){
     fetch('http://localhost:8080/refuse/advisor1/' +x[i]["studentID"], {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
-    })}
+    })
 
-    if(num==2){
+    if(x[i]["advisor"]==x[i]["teacher1"]){
+        fetch('http://localhost:8080/refuse/teacher1/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    }
+
+}
+
+if(num==2){
     fetch('http://localhost:8080/refuse/advisor2/' +x[i]["studentID"], {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
-    })}
+    })
+
+    if(x[i]["advisor"]==x[i]["teacher2"]){
+        fetch('http://localhost:8080/refuse/teacher2/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+
+    }
+
+}
 
     
   }
@@ -125,8 +171,10 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
     x = data;
 
     for (let i = 0; i < data.length; i++) {
-      if (data[i]["advisor"] == nameFromForm1 || (data[i]["teacher1"] == nameFromForm1 && data[i]["teacher2"] == nameFromForm1)) {
+      if (data[i]["advisor"] == nameFromForm1) {
+        
         (function () {
+            if(data[i]["advisorApprove1"]!='approve'){
           var paragraph1 = document.createElement('p');
           paragraph1.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
             data[i]["studentBranch"] + " " + data[i]["subjectName1"] + " " + data[i]["subjectCode1"] + " " + data[i]["section1"] + " " + data[i]["dayTime1"] + " " +
@@ -150,7 +198,9 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
           button2.onclick = function () {
             refuse(button2.id, 1);
           };
-          document.body.appendChild(button2);
+          document.body.appendChild(button2);}
+         
+          if(data[i]["advisorApprove2"]!='approve'){
 
           var paragraph01 = document.createElement('p');
           paragraph01.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
@@ -175,11 +225,13 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
           button02.onclick = function () {
             refuse(button02.id, 2);
           };
-          document.body.appendChild(button02);
+          document.body.appendChild(button02);}}
 
-        })();
+         
+
+        )();
       }
-      else if (data[i]["teacher1"] == nameFromForm1 && data[i]["teacher2"] != nameFromForm1) {
+      else if (data[i]["teacher1"] == nameFromForm1 && data[i]["teacher2"] != nameFromForm1&&data[i]['teacherApprove1']!='approve') {
         (function () {
           var paragraph11 = document.createElement('p');
           paragraph11.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
@@ -207,7 +259,7 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
           document.body.appendChild(button12);
         })();
       }
-      else if (data[i]["teacher1"] != nameFromForm1 && data[i]["teacher2"] == nameFromForm1) {
+      else if (data[i]["teacher1"] != nameFromForm1 && data[i]["teacher2"] == nameFromForm1 &&data[i]["teacherApprove2"]!='approve') {
         (function () {
           var paragraph21 = document.createElement('p');
           paragraph21.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
