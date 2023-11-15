@@ -1,0 +1,297 @@
+body {
+    /*text-align: center;*/
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* ขอบสีแดง */
+.red-border {
+    width: 100%;
+    border: 5px solid #c3002f;
+    box-sizing: border-box;
+}
+
+/* ขอบสีเหลือง */
+.yellow-border {
+    width: 100%;
+    border: 20px solid #ffd13f;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+}
+
+.red-textbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #40444c;
+    color:white;
+    padding: 10px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+.grey-textbox{
+    flex: 1;
+    padding: 10px;
+    background-color: #40444c;
+    width: 100%;
+    height: 30px;
+
+}
+
+.w2-textbox{
+        flex: 1;
+        padding: 10px;
+        background-color: #FFFFFF;
+        padding: 10px;
+        width: 500px;
+        height: 62px;
+
+    }
+
+.white-textbox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        color:white;
+        padding: 10px;
+        width: 332px;
+        height: 62px;
+        text-align: center;
+    }
+
+.right {
+          text-align: right;
+          align-items: center;
+          align-items: center;
+          font-family: 'Noto Sans Thai', sans-serif;
+          margin-right: 60px;
+          margin-top: -45px;
+
+
+      }
+
+#ID {
+        height: 20px;
+        border: 1px solid #D9D9D9;
+
+    }
+
+#password {
+        height: 20px;
+        border: 1px solid #D9D9D9;
+     }
+
+     button {
+        /* Add your styling properties here */
+        background-color: #40444c; /* Green background color */
+        color: white; /* White text color */
+        padding: 4px 8px; /* Padding for the button */
+        border: none; /* No border */
+        cursor: pointer; /* Cursor on hover */
+        height: 50px;
+        position: relative; /* Enable positioning */
+        top: -10px; /* Move the button up by 20px */
+        left: -11px;
+        width: 130px;
+    }
+#profile{
+    height:73px;
+    width: 73px;
+}
+#username{
+    position: absolute;
+    right: 170px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(200, 88, 88);
+}
+
+#username {
+    display: flex;
+    align-items: center;
+}
+
+.username-image {
+    margin-right: 10px; /* Adjust the margin as needed */
+    height: 20px;
+}
+
+#notification{
+    height: 20px;
+    width: 20px;
+   margin-right: 10px;
+}
+
+img {
+    max-height: 100%;
+    width: auto; 
+  }
+
+.img-web {
+    max-width: 1920px;
+width: 100%;
+height: auto;
+aspect-ratio: attr(width) / attr(height);
+    }
+
+#userForm{
+    margin-top: 40px;
+    text-align: center;
+}
+input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+#trackStatus{
+    background-color: #c3002f;
+}
+
+#submit{
+     /* Add your styling properties here */
+     background-color: #40444c; /* Green background color */
+     color: solid #c3002f; /* White text color */
+     padding: 4px 8px; /* Padding for the button */
+     border: none; /* No border */
+     cursor: pointer; /* Cursor on hover */
+     color:white;
+     margin-left: 15px;
+     margin-right: 15px;
+     margin-top: 20px;
+     height: 40px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 1500px;
+}
+
+li {
+    float: left;
+}
+
+li a,
+.dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #c3002f;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+a{
+    cursor: pointer;
+}
+
+trackStatus{
+    background-color: #c3002f;
+}
+
+#ok{
+    height: 100px;
+
+}
+
+.white-layer {
+    background-color: white; /* กำหนดสีพื้นหลังของ layer เป็นขาว */
+    position: absolute; /* กำหนดให้ layer อยู่ในตำแหน่งที่คงที่ตลอดเวลา */
+    top: 220px; /* กำหนดให้อยู่ด้านบน */
+    left: 50px; /* กำหนดให้อยู่ด้านซ้าย */ /* กำหนดความกว้างเต็มหน้าจอ */
+    height: 650px; /* กำหนดความสูงเต็มหน้าจอ */
+    z-index: 1; /* กำหนดให้อยู่บนสุด */
+    border-radius: 5px;
+    width: 1420px;
+}
+
+#topic{
+    text-align: center;
+    margin-top: 40px;
+    background-color: yellow;
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 25px;
+    border-radius: 5px;
+    
+}
+
+#display{
+    text-align: center;
+    margin-top: 40px;
+    background-color: rgb(219, 219, 25);
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 50px;
+    
+}
+.detail {
+    float:left;
+    width:100px;
+    height:100px;
+    text-align:center;
+    margin-left: 15px;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 2px;
+}
+
+#small-circle1 {
+    width: 20px; /* กำหนดความกว้างของวงกลม */
+    height: 20px; /* กำหนดความสูงของวงกลม */
+    background-color: rgb(68, 0, 255); /* กำหนดสีพื้นหลังของวงกลม */
+    border-radius: 50%; /* กำหนดให้มีเส้นรอบวงเพื่อทำให้เป็นวงกลม */
+    display: inline-block; /* กำหนดให้ element เป็น inline-block เพื่อให้สามารถวางบนบรรทัดเดียวกันได้ */
+}
+
+#small-circle2 {
+    width: 20px; /* กำหนดความกว้างของวงกลม */
+    height: 20px; /* กำหนดความสูงของวงกลม */
+    background-color: rgb(68, 0, 255); /* กำหนดสีพื้นหลังของวงกลม */
+    border-radius: 50%; /* กำหนดให้มีเส้นรอบวงเพื่อทำให้เป็นวงกลม */
+    display: inline-block; /* กำหนดให้ element เป็น inline-block เพื่อให้สามารถวางบนบรรทัดเดียวกันได้ */
+}

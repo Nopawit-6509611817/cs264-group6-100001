@@ -4,7 +4,7 @@
     <!--หน้าเมื่อloginเเล้ว-->
     <meta charset="UTF-8">
     <title>คำร้องของนักศึกษา</title>
-    <link rel="stylesheet" type="text/css" href="request.css">
+    <link rel="stylesheet" type="text/css" href="approve.css">
     <link rel="icon" type="image/x-icon" href="picture/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,243 @@
 </head>
 <body>
 
+    
+<script>
+    var x;
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        return null;
+    }
+
+var i = 0;
+    var nameFromForm1 = getQueryVariable("name");
+
+    var d = "asd" ;
+
+    function approve(i, num) {
+
+  if(x[i]["advisor"]==nameFromForm1){
+    if(num==1){
+    fetch('http://localhost:8080/approve/advisor1/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })}
+
+    if(num==2){
+    fetch('http://localhost:8080/approve/advisor2/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })}
+
+    
+  }
+
+  if(x[i]["teacher1"]==nameFromForm1){
+    fetch('http://localhost:8080/approve/teacher1/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+  }
+
+  if(x[i]["teacher2"]==nameFromForm1){
+    fetch('http://localhost:8080/approve/teacher2/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+  }
+}
+function refuse(i, num) {
+  
+    if(x[i]["advisor"]==nameFromForm1){
+    if(num==1){
+    fetch('http://localhost:8080/refuse/advisor1/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })}
+
+    if(num==2){
+    fetch('http://localhost:8080/refuse/advisor2/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })}
+
+    
+  }
+
+  if(x[i]["teacher1"]==nameFromForm1){
+    fetch('http://localhost:8080/refuse/teacher1/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+  }
+
+  if(x[i]["teacher2"]==nameFromForm1){
+    fetch('http://localhost:8080/refuse/teacher2/' +x[i]["studentID"], {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+  }
+}
+
+fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    x = data;
+
+    for (let i = 0; i < data.length; i++) {
+      if (data[i]["advisor"] == nameFromForm1 || (data[i]["teacher1"] == nameFromForm1 && data[i]["teacher2"] == nameFromForm1)) {
+        (function () {
+          var paragraph1 = document.createElement('p');
+          paragraph1.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
+            data[i]["studentBranch"] + " " + data[i]["subjectName1"] + " " + data[i]["subjectCode1"] + " " + data[i]["section1"] + " " + data[i]["dayTime1"] + " " +
+            data[i]["type1"] + " " + data[i]["cause1"] + " " + data[i]["date"] + " ";
+          document.body.appendChild(paragraph1);
+          paragraph1.style.fontSize = "20px";
+          paragraph1.id = "display";
+          paragraph1.classList.add("para" + i);
+
+          var button1 = document.createElement('button');
+          button1.textContent = "approve";
+          button1.id = i;
+          button1.onclick = function () {
+            approve(button1.id, 1);
+          };
+          document.body.appendChild(button1);
+
+          var button2 = document.createElement('button');
+          button2.textContent = "refuse";
+          button2.id = i;
+          button2.onclick = function () {
+            refuse(button2.id, 1);
+          };
+          document.body.appendChild(button2);
+
+          var paragraph01 = document.createElement('p');
+          paragraph01.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
+            data[i]["studentBranch"] + " " + data[i]["subjectName2"] + " " + data[i]["subjectCode2"] + " " + data[i]["section2"] + " " + data[i]["dayTime2"] + " " +
+            data[i]["type2"] + " " + data[i]["cause2"] + " " + data[i]["date"] + " ";
+          document.body.appendChild(paragraph01);
+          paragraph01.style.fontSize = "20px";
+          paragraph01.id = "display";
+          paragraph01.classList.add("para" + i);
+
+          var button01 = document.createElement('button');
+          button01.textContent = "approve";
+          button01.id = i;
+          button01.onclick = function () {
+            approve(button01.id, 2);
+          };
+          document.body.appendChild(button01);
+
+          var button02 = document.createElement('button');
+          button02.textContent = "refuse";
+          button02.id = i;
+          button02.onclick = function () {
+            refuse(button02.id, 2);
+          };
+          document.body.appendChild(button02);
+
+        })();
+      }
+      else if (data[i]["teacher1"] == nameFromForm1 && data[i]["teacher2"] != nameFromForm1) {
+        (function () {
+          var paragraph11 = document.createElement('p');
+          paragraph11.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
+            data[i]["studentBranch"] + " " + data[i]["subjectName1"] + " " + data[i]["subjectCode1"] + " " + data[i]["section1"] + " " + data[i]["dayTime1"] + " " +
+            data[i]["type1"] + " " + data[i]["cause1"] + " " + data[i]["date"] + " ";
+          document.body.appendChild(paragraph11);
+          paragraph11.style.fontSize = "20px";
+          paragraph11.id = "display";
+          paragraph11.classList.add("para" + i);
+
+          var button11 = document.createElement('button');
+          button11.textContent = "approve";
+          button11.id = i;
+          button11.onclick = function () {
+            approve(button11.id, 1);
+          };
+          document.body.appendChild(button11);
+
+          var button12 = document.createElement('button');
+          button12.textContent = "refuse";
+          button12.id = i;
+          button12.onclick = function () {
+            refuse(button12.id, 1);
+          };
+          document.body.appendChild(button12);
+        })();
+      }
+      else if (data[i]["teacher1"] != nameFromForm1 && data[i]["teacher2"] == nameFromForm1) {
+        (function () {
+          var paragraph21 = document.createElement('p');
+          paragraph21.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
+            data[i]["studentBranch"] + " " + data[i]["subjectName2"] + " " + data[i]["subjectCode2"] + " " + data[i]["section2"] + " " + data[i]["dayTime2"] + " " +
+            data[i]["type2"] + " " + data[i]["cause2"] + " " + data[i]["date"] + " ";
+          document.body.appendChild(paragraph21);
+          paragraph21.style.fontSize = "20px";
+          paragraph21.id = "display";
+          paragraph21.classList.add("para" + i);
+
+          var button21 = document.createElement('button');
+          button21.textContent = "approve";
+          button21.id = i;
+          button21.onclick = function () {
+            approve(button21.id, 2);
+          };
+          document.body.appendChild(button21);
+
+          var button22 = document.createElement('button');
+          button22.textContent = "refuse";
+          button22.id = i;
+          button22.onclick = function () {
+            refuse(button22.id, 2);
+          };
+          document.body.appendChild(button22);
+
+          
+        })();
+      }
+
+     
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+</script>
 <div class="red-border"></div>
 <div class="yellow-border"></div>
+
 
 <div class="container">
     <div class="white-textbox">
@@ -51,24 +286,13 @@
 
    
 </div>
+<div id="topic">คำร้องของนักศึกษา</div>
 
 
-<img class="img-web" src="picture/web.jpg" alt="web.jpg" width="1457" height="600">
+
 
 <script>
-    function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split("&");
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split("=");
-            if (pair[0] == variable) {
-                return decodeURIComponent(pair[1]);
-            }
-        }
-        return null;
-    }
-
-    var nameFromForm1 = getQueryVariable("name");
+    
 
     document.getElementById("en-name").innerHTML = nameFromForm1 ;
 
@@ -82,6 +306,8 @@
 
     
 </script>
+
+
 
 </body>
 </html>

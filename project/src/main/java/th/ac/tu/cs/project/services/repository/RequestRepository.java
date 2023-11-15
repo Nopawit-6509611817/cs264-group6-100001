@@ -9,7 +9,21 @@ import th.ac.tu.cs.project.services.model.Request;
 public interface RequestRepository {
     int save(Request request);
 
-    int update(Request request);
+    int updateAdvisor1(long studentID);
+
+    int updateAdvisor2(long studentID);
+
+    int updateTeacher1(long studentID);
+
+    int updateTeacher2(long studentID);
+    
+    int refuseAdvisor1(long studentID);
+
+    int refuseAdvisor2(long studentID);
+
+    int refuseTeacher1(long studentID);
+
+    int refuseTeacher2(long studentID);
 
     Request findByStudentId(long studentID);
 

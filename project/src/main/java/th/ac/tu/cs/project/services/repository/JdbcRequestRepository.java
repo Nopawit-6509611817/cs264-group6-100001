@@ -31,10 +31,55 @@ public class JdbcRequestRepository implements  RequestRepository{
     }
 
     @Override
-    public int update(Request request) {
+    public int updateAdvisor1(long studentID) {
 
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        return jdbcTemplate.update("UPDATE request1 SET advisorApprove1='approve' WHERE studentID=?",
+                new Object[] { studentID });
     }
+@Override
+    public int updateAdvisor2(long studentID) {
+
+        return jdbcTemplate.update("UPDATE request1 SET advisorApprove2='approve' WHERE studentID=?",
+                new Object[] { studentID });
+    }
+@Override
+    public int updateTeacher1(long studentID) {
+
+        return jdbcTemplate.update("UPDATE request1 SET teacherApprove1='approve' WHERE studentID=?",
+                new Object[] { studentID });
+    }
+@Override
+    public int updateTeacher2(long studentID) {
+
+        return jdbcTemplate.update("UPDATE request1 SET teacherApprove2='approve' WHERE studentID=?",
+                new Object[] { studentID });
+    }
+
+   @Override
+    public int refuseAdvisor1(long studentID) {
+
+        return jdbcTemplate.update("UPDATE request1 SET advisorApprove1='refuse' WHERE studentID=?",
+                new Object[] { studentID });
+    }
+@Override
+    public int refuseAdvisor2(long studentID) {
+
+        return jdbcTemplate.update("UPDATE request1 SET advisorApprove2='refuse' WHERE studentID=?",
+                new Object[] { studentID });
+    }
+@Override
+    public int refuseTeacher1(long studentID) {
+
+        return jdbcTemplate.update("UPDATE request1 SET teacherApprove1='refuse' WHERE studentID=?",
+                new Object[] { studentID });
+    }
+@Override
+    public int refuseTeacher2(long studentID) {
+
+        return jdbcTemplate.update("UPDATE request1 SET teacherApprove2='refuse' WHERE studentID=?",
+                new Object[] { studentID });
+    }
+
 
     @Override
     public Request findByStudentId(long studentID) {
@@ -49,7 +94,7 @@ public class JdbcRequestRepository implements  RequestRepository{
        public List<Request> findByStudentIdForteacher(String teacherName) {
 
         try {
-             return  jdbcTemplate.query("SELECT * FROM request1 where teacher1=? OR advisor=? OR teacher2=?;", BeanPropertyRowMapper.newInstance(Request.class), teacherName, teacherName, teacherName);
+             return  jdbcTemplate.query("SELECT * FROM request1 where (teacher1=? AND teacherApprove1='waiting') OR (advisor=? AND advisorApprove1='waiting') OR (advisor=? AND advisorApprove2='waiting')OR (teacher2=? AND teacherApprove2='waiting');", BeanPropertyRowMapper.newInstance(Request.class), teacherName, teacherName, teacherName, teacherName);
         } catch (IncorrectResultSizeDataAccessException e) {
             return null;
         }

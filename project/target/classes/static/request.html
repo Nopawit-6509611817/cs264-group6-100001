@@ -104,8 +104,8 @@
         <input id="cause1" name="cause1" class="reason"  required></input>
         <select  id="type1" name="type1" onclick="permission1" class="permission1" required>
             <option value=""></option>
-            <option value="true">เพิ่ม</option>
-            <option  value="false" >ถอน</option>
+            <option value="เพิ่ม">เพิ่ม</option>
+            <option  value="ถอน" >ถอน</option>
         </select>
     </div>
 
@@ -118,8 +118,8 @@
         <input id="cause2" name="cause2" class="reason" required></input>
         <select  class="permission1" name="type2" id="type2" onclick="permission1" required>
             <option value=""></option>
-            <option value="true">เพิ่ม</option>
-            <option  value="false" >ถอน</option>
+            <option value="เพิ่ม">เพิ่ม</option>
+            <option  value="ถอน" >ถอน</option>
         </select>
     </div><br>
 
@@ -173,21 +173,21 @@
     const dayTime1 = document.getElementById("dayTime1").value;
     const teacher1 = document.getElementById("teacher1").value;
     const type1 = document.getElementById("type1").value;
-    const teacherApprove1 = "asd";
-    const advisorApprove1 = "asd";
+    const teacherApprove1 = "waiting";
+    const advisorApprove1 = "waiting";
     const subjectCode2 = document.getElementById("subjectCode2").value;
     const subjectName2 = document.getElementById("subjectName2").value;
     const section2 = document.getElementById("section2").value;
     const dayTime2 = document.getElementById("dayTime2").value;
     const teacher2 = document.getElementById("teacher2").value;
     const type2 = document.getElementById("type2").value;
-    const teacherApprove2 = "asd";
-    const advisorApprove2 = "asd";
+    const teacherApprove2 = "waiting";
+    const advisorApprove2 = "waiting";
     const cause1 = document.getElementById("cause1").value;
     const cause2 = document.getElementById("cause2").value;
   
     const data = {
-    studentID: 6509611817,
+    studentID: studentId,
     studentFirstName: studentFirstName,
     studentLastName: studentLastName,
     studentYear: 2,

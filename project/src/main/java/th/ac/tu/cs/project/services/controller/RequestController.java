@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import th.ac.tu.cs.project.services.model.Request;
 import th.ac.tu.cs.project.services.repository.RequestRepository;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 @CrossOrigin(origins = "http://localhost:8080")
@@ -50,8 +49,8 @@ public class RequestController {
         }
     }
 
-        @GetMapping("/search/teacher/{studentId}")
-    public ResponseEntity<List<Request>> getStudentByIdForTeacher(@PathVariable("studentId") String teacherName) {
+        @GetMapping("/search/teacher/{teacherName}")
+    public ResponseEntity<List<Request>> getStudentByIdForTeacher(@PathVariable("teacherName") String teacherName) {
         try{
         List<Request> requests = new ArrayList<Request>();
         requestRepository.findByStudentIdForteacher(teacherName).forEach(requests::add);
@@ -67,6 +66,66 @@ public class RequestController {
         return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
     }
+
+
+    @GetMapping("/approve/advisor1/{studentID}")
+    public ResponseEntity<String> approveStudentByIdForAdvisor1(@PathVariable("studentID") long studentID) {
+        requestRepository.updateAdvisor1(studentID);
+
+            return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/approve/advisor2/{studentID}")
+    public ResponseEntity<String> approveStudentByIdForAdvisor2(@PathVariable("studentID") long studentID) {
+        requestRepository.updateAdvisor2(studentID);
+
+            return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/approve/teacher1/{studentID}")
+    public ResponseEntity<String> approveStudentByIdForTeacher1(@PathVariable("studentID") long studentID) {
+        requestRepository.updateTeacher1(studentID);
+
+            return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/approve/teacher2/{studentID}")
+    public ResponseEntity<String> approveStudentByIdForTeacher2(@PathVariable("studentID") long studentID) {
+        requestRepository.updateTeacher2(studentID);
+
+            return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
+    }
+
+    
+        @GetMapping("/refuse/advisor1/{studentID}")
+    public ResponseEntity<String> refuseStudentByIdForAdvisor1(@PathVariable("studentID") long studentID) {
+        requestRepository.refuseAdvisor1(studentID);
+
+            return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/refuse/advisor2/{studentID}")
+    public ResponseEntity<String> refuseStudentByIdForAdvisor2(@PathVariable("studentID") long studentID) {
+        requestRepository.refuseAdvisor2(studentID);
+
+            return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/refuse/teacher1/{studentID}")
+    public ResponseEntity<String> refuseStudentByIdForTeacher1(@PathVariable("studentID") long studentID) {
+        requestRepository.refuseTeacher1(studentID);
+
+            return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/refuse/teacher2/{studentID}")
+    public ResponseEntity<String> refuseStudentByIdForTeacher2(@PathVariable("studentID") long studentID) {
+        requestRepository.refuseTeacher2(studentID);
+
+            return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
+    }
+
+
 
 
     
