@@ -39,7 +39,7 @@
         document.getElementById("section2").innerHTML = data["section2"];
         document.getElementById("dayTime2").innerHTML = data["dayTime2"];
         document.getElementById("teacher2").innerHTML = data["teacher2"];
-        if(data["type2"]=="true"){
+        if(data["type2"]=="เพิ่ม"){
             document.getElementById("type2").innerHTML = "เพิ่ม";
         }
         else{
@@ -49,17 +49,17 @@
             document.getElementById("status2").innerHTML = "approve";
             document.getElementById("small-circle2").style.backgroundColor = "yellow";       
         }
-            else if(data["advisorApprove2"]=="notapprove"&&data["teacherApprove2"]=="notapprove"){
-                document.getElementById("status2").innerHTML = "notapprove";
+            else if(data["advisorApprove2"]=="refuse"&&data["teacherApprove2"]=="refuse"){
+                document.getElementById("status2").innerHTML = "refuse";
                 document.getElementById("small-circle2").style.backgroundColor = "red";
 
             }
-            else if(data["advisorApprove2"]=="approve"&&data["teacherApprove2"]=="notapprove"){
-                document.getElementById("status2").innerHTML = "notapprove";
+            else if(data["advisorApprove2"]=="approve"&&data["teacherApprove2"]=="refuse"){
+                document.getElementById("status2").innerHTML = "refuse";
                 document.getElementById("small-circle2").style.backgroundColor = "red";
             }
-            else if(data["advisorApprove2"]=="notapprove"&&data["teacherApprove2"]=="approve"){
-                document.getElementById("status2").innerHTML = "notapprove";
+            else if(data["advisorApprove2"]=="refuse"&&data["teacherApprove2"]=="approve"){
+                document.getElementById("status2").innerHTML = "refuse";
                 document.getElementById("small-circle2").style.backgroundColor = "red";
             }
             else{
@@ -73,27 +73,28 @@
         document.getElementById("section1").innerHTML = data["section1"];
         document.getElementById("dayTime1").innerHTML = data["dayTime1"];
         document.getElementById("teacher1").innerHTML = data["teacher1"];
-        if(data["type1"]=="true"){
+        if(data["type1"]=="เพิ่ม"){
             document.getElementById("type1").innerHTML = "เพิ่ม";
         }
         else{
             document.getElementById("type1").innerHTML = "ถอน";
+            
         }
         if(data["advisorApprove1"]=="approve"&&data["teacherApprove1"]=="approve"){
             document.getElementById("status1").innerHTML = "approve";
-            document.getElementById("small-circle1").style.backgroundColor = "red";
+            document.getElementById("small-circle1").style.backgroundColor = "yellow";
         }
-            else if(data["advisorApprove1"]=="notapprove"&&data["teacherApprove1"]=="notapprove"){
-                document.getElementById("status1").innerHTML = "notapprove";
+            else if(data["advisorApprove1"]=="refuse"&&data["teacherApprove1"]=="refuse"){
+                document.getElementById("status1").innerHTML = "refuse";
                 document.getElementById("small-circle1").style.backgroundColor = "red";
 
             }
-            else if(data["advisorApprove1"]=="approve"&&data["teacherApprove1"]=="notapprove"){
-                document.getElementById("status1").innerHTML = "notapprove";
+            else if(data["advisorApprove1"]=="approve"&&data["teacherApprove1"]=="refuse"){
+                document.getElementById("status1").innerHTML = "refuse";
                 document.getElementById("small-circle1").style.backgroundColor = "red";
             }
-            else if(data["advisorApprove1"]=="notapprove"&&data["teacherApprove1"]=="approve"){
-                document.getElementById("status1").innerHTML = "notapprove";
+            else if(data["advisorApprove1"]=="refuse"&&data["teacherApprove1"]=="approve"){
+                document.getElementById("status1").innerHTML = "refusse";
                 document.getElementById("small-circle1").style.backgroundColor = "red";
             }
             else{
@@ -156,25 +157,25 @@
     <div id="topic"><p>ติดตามสถานะคำร้อง</p></div>
     <div id="display">
         <p class="detail">1</p>
-        <p class="detail" id="subjectCode1"></p>
-        <p class="detail" id="subjectName1"></p>
-        <p class="detail" id="section1"></p>
-        <p class="detail" id="dayTime1"></p>
-        <p class="detail" id="teacher1"></p>
-        <p class="detail" id="type1"></p>
-        <p class="datail" id="small-circle1"></p>
-        <p class="detail" id="status1"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="subjectCode1"></p>
+        <p class="detail" style="margin-right: 25px;width: 120px;" id="subjectName1"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="section1"></p>
+        <p class="detail" style="margin-right: 25px;width: 180px;" id="dayTime1"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="teacher1"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="type1"></p>
+        <p class="detail" style="margin-right: 25px;" id="small-circle1"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="status1"></p>
     </div>
     <div id="display">
         <p class="detail">2</p>
-        <p class="detail" id="subjectCode2"></p>
-        <p class="detail" id="subjectName2"></p>
-        <p class="detail" id="section2"></p>
-        <p class="detail" id="dayTime2"></p>
-        <p class="detail" id="teacher2"></p>
-        <p class="detail" id="type2"></p>
-        <p class="datail" id="small-circle2"></p>
-        <p class="detail" id="status2"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="subjectCode2"></p>
+        <p class="detail" style="margin-right: 25px;width: 120px;" id="subjectName2"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="section2"></p>
+        <p class="detail" style="margin-right: 25px;width: 180px;" id="dayTime2"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="teacher2"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="type2"></p>
+        <p class="detail" style="margin-right: 25px;" id="small-circle2"></p>
+        <p class="detail" style="margin-right: 25px;width: 100px;" id="status2"></p>
     </div>
   </div>
   <img class="img-web" src="picture/web.jpg" alt="web.jpg" width="1457" height="600">

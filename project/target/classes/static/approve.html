@@ -76,7 +76,7 @@ var i = 0;
     
   }
 
-  if(x[i]["teacher1"]==nameFromForm1){
+  else if(x[i]["teacher1"]==nameFromForm1&&num==3){
     fetch('http://localhost:8080/approve/teacher1/' +x[i]["studentID"], {
         method: 'GET',
         headers: {
@@ -85,7 +85,7 @@ var i = 0;
     })
   }
 
-  if(x[i]["teacher2"]==nameFromForm1){
+  else if(x[i]["teacher2"]==nameFromForm1&&num==4){
     fetch('http://localhost:8080/approve/teacher2/' +x[i]["studentID"], {
         method: 'GET',
         headers: {
@@ -140,7 +140,7 @@ if(num==2){
     
   }
 
-  if(x[i]["teacher1"]==nameFromForm1){
+  else if(x[i]["teacher1"]==nameFromForm1&&num==3){
     fetch('http://localhost:8080/refuse/teacher1/' +x[i]["studentID"], {
         method: 'GET',
         headers: {
@@ -149,7 +149,7 @@ if(num==2){
     })
   }
 
-  if(x[i]["teacher2"]==nameFromForm1){
+  else if(x[i]["teacher2"]==nameFromForm1&&num==4){
     fetch('http://localhost:8080/refuse/teacher2/' +x[i]["studentID"], {
         method: 'GET',
         headers: {
@@ -174,7 +174,7 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
       if (data[i]["advisor"] == nameFromForm1) {
         
         (function () {
-            if(data[i]["advisorApprove1"]!='approve'){
+            if(data[i]["advisorApprove1"]=='waiting'){
           var paragraph1 = document.createElement('p');
           paragraph1.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
             data[i]["studentBranch"] + " " + data[i]["subjectName1"] + " " + data[i]["subjectCode1"] + " " + data[i]["section1"] + " " + data[i]["dayTime1"] + " " +
@@ -200,7 +200,7 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
           };
           document.body.appendChild(button2);}
          
-          if(data[i]["advisorApprove2"]!='approve'){
+          if(data[i]["advisorApprove2"]=='waiting'){
 
           var paragraph01 = document.createElement('p');
           paragraph01.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
@@ -231,7 +231,7 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
 
         )();
       }
-      else if (data[i]["teacher1"] == nameFromForm1 && data[i]["teacher2"] != nameFromForm1&&data[i]['teacherApprove1']!='approve') {
+      else if (data[i]["teacher1"] == nameFromForm1 && data[i]["teacher2"] != nameFromForm1&&data[i]['teacherApprove1']=='waiting') {
         (function () {
           var paragraph11 = document.createElement('p');
           paragraph11.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
@@ -246,7 +246,7 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
           button11.textContent = "approve";
           button11.id = i;
           button11.onclick = function () {
-            approve(button11.id, 1);
+            approve(button11.id, 3);
           };
           document.body.appendChild(button11);
 
@@ -254,12 +254,12 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
           button12.textContent = "refuse";
           button12.id = i;
           button12.onclick = function () {
-            refuse(button12.id, 1);
+            refuse(button12.id, 3);
           };
           document.body.appendChild(button12);
         })();
       }
-      else if (data[i]["teacher1"] != nameFromForm1 && data[i]["teacher2"] == nameFromForm1 &&data[i]["teacherApprove2"]!='approve') {
+      else if (data[i]["teacher1"] != nameFromForm1 && data[i]["teacher2"] == nameFromForm1 &&data[i]["teacherApprove2"]=='waiting') {
         (function () {
           var paragraph21 = document.createElement('p');
           paragraph21.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
@@ -274,7 +274,7 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
           button21.textContent = "approve";
           button21.id = i;
           button21.onclick = function () {
-            approve(button21.id, 2);
+            approve(button21.id, 4);
           };
           document.body.appendChild(button21);
 
@@ -282,9 +282,68 @@ fetch('http://localhost:8080/search/teacher/' + nameFromForm1, {
           button22.textContent = "refuse";
           button22.id = i;
           button22.onclick = function () {
-            refuse(button22.id, 2);
+            refuse(button22.id, 4);
           };
           document.body.appendChild(button22);
+
+          
+        })();
+      }
+
+      else if (data[i]["teacher1"] == nameFromForm1 && data[i]["teacher2"] == nameFromForm1 ) {
+        (function () {
+          if(data[i]["teacherApprove2"]=='waiting'){
+          var paragraph31 = document.createElement('p');
+          paragraph31.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
+            data[i]["studentBranch"] + " " + data[i]["subjectName2"] + " " + data[i]["subjectCode2"] + " " + data[i]["section2"] + " " + data[i]["dayTime2"] + " " +
+            data[i]["type2"] + " " + data[i]["cause2"] + " " + data[i]["date"] + " ";
+          document.body.appendChild(paragraph31);
+          paragraph31.style.fontSize = "20px";
+          paragraph31.id = "display";
+          paragraph31.classList.add("para" + i);
+
+          var button31 = document.createElement('button');
+          button31.textContent = "approve";
+          button31.id = i;
+          button31.onclick = function () {
+            approve(button31.id, 4);
+          };
+          document.body.appendChild(button31);
+
+          var button32 = document.createElement('button');
+          button32.textContent = "refuse";
+          button32.id = i;
+          button32.onclick = function () {
+            refuse(button32.id, 4);
+          };
+          document.body.appendChild(button32);}
+
+
+          if(data[i]["teacherApprove1"]=='waiting'){
+          var paragraph41 = document.createElement('p');
+          paragraph41.textContent = data[i]["studentID"] + "  " + data[i]["studentFirstName"] + " " + data[i]["studentLastName"] + " " + data[i]["studentYear"] + " " +
+            data[i]["studentBranch"] + " " + data[i]["subjectName1"] + " " + data[i]["subjectCode1"] + " " + data[i]["section1"] + " " + data[i]["dayTime1"] + " " +
+            data[i]["type1"] + " " + data[i]["cause1"] + " " + data[i]["date"] + " ";
+          document.body.appendChild(paragraph41);
+          paragraph41.style.fontSize = "20px";
+          paragraph41.id = "display";
+          paragraph41.classList.add("para" + i);
+
+          var button41 = document.createElement('button');
+          button41.textContent = "approve";
+          button41.id = i;
+          button41.onclick = function () {
+            approve(button41.id, 3);
+          };
+          document.body.appendChild(button41);
+
+          var button42 = document.createElement('button');
+          button42.textContent = "refuse";
+          button42.id = i;
+          button42.onclick = function () {
+            refuse(button42.id, 3);
+          };
+          document.body.appendChild(button42);}
 
           
         })();
