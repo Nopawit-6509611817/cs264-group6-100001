@@ -177,12 +177,34 @@ input{
 .k1{
     margin-left: 50px;
     position: relative;
-    left: -45px;
 }
 .reason{
     width: 100px;
 }
-
+.numbersub{
+    left: -55px
+}
+.codesub{
+    left: -65px
+}
+.namesub{
+    left: -55px
+}
+.sectionsub{
+    left: -43px
+}
+.datesub{
+    left: -35px
+}
+.teachsub{
+    left: -33px
+}
+.reasonsub{
+    left: -25px
+}
+.ptsub{
+    left: -35px
+}
 .k2{
     position: relative;
     right: 20px;
@@ -309,4 +331,9 @@ a{
 .userinfo button:hover {
     background-color: #0056b3;
 }
+
+.userinfo input {
+    text-align: center;
+}
+
 

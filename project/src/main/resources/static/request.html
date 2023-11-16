@@ -61,7 +61,7 @@
 
 </div>
 <div class="form-container">
-    <form  id="userForm" onsubmit="submitForm(event);">
+    <form  id="userForm" onsubmit="submitForm(event)">
         <section class="userinfo">
             <label for="firstName">ชื่อ:</label>
             <input type="text" id="firstName" name="firstName" required><br>
@@ -88,14 +88,14 @@
         <div>
             <p>หากไม่ประสงค์เพิ่ม/ถอนในรายวิชาที่สองให้ใส่ "-" ในทุกช่อง</p>
             <div class="k0">
-                <label for="d" class="k1">ลำดับ</label>
-                <label for="d" class="k1">รหัสวิชา</label>
-                <label for="d" class="k1">ชื่อวิชา</label>
-                <label for="d" class="k1">Section</label>
-                <label for="d" class="k1">วัน/เวลา</label>
-                <label for="d" class="k1">ชื่อผู้สอน</label>
-                <label for="d" class="k1">เหตุผล</label>
-                <label for="d" class="k1">เพิ่ม/ถอน</label>
+                <label for="d" class="k1 numbersub">ลำดับ</label>
+                <label for="d" class="k1 codesub" >รหัสวิชา</label>
+                <label for="d" class="k1 namesub">ชื่อวิชา</label>
+                <label for="d" class="k1 sectionsub">Section</label>
+                <label for="d" class="k1 datesub">วัน/เวลา</label>
+                <label for="d" class="k1 teachsub">ชื่อผู้สอน</label>
+                <label for="d" class="k1 reasonsub">เหตุผล</label>
+                <label for="d" class="k1 ptsub">เพิ่ม/ถอน</label>
             </div>
 
             <label for="d" class="k2">1</label>
@@ -105,7 +105,7 @@
             <input id="dayTime1" name="dayTime1" class="reason" required></input>
             <input id="teacher1" name="teacher1" class="reason" required></input>
             <input id="cause1" name="cause1" class="reason"  required></input>
-            <select  id="type1" name="type1" class="permission1" required>
+            <select  id="type1" name="type1" onclick="permission1" class="permission1" required>
                 <option value=""></option>
                 <option value="เพิ่ม">เพิ่ม</option>
                 <option value="ถอน">ถอน</option>
@@ -119,7 +119,7 @@
         <input id="dayTime2" name="dayTime2" class="reason" required></input>
         <input id="teacher2" name="teacher2" class="reason" required></input>
         <input id="cause2" name="cause2" class="reason" required></input>
-        <select  class="permission1" name="type2" id="type2"  required>
+        <select  class="permission1" name="type2" id="type2" onclick="permission1" required>
             <option value=""></option>
             <option value="เพิ่ม">เพิ่ม</option>
             <option  value="ถอน" >ถอน</option>
@@ -161,159 +161,6 @@
     }
 </script>
 
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("gVtHktWrKg4NVD0oz");
-   })();
-</script>
-
-<script>
-    function sendEmail(){
-
-        
-        
-        if(document.getElementById("advisor").value=="teacher1"){
-        var params = {
-            name: "teacher1",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e7llqyx";
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-            alert("success");
-        }
-
-    )
-    .catch((err) => {
-        alert("err");
-    });
-    }
-
-    if(document.getElementById("advisor").value=="teacher2"){
-        var params = {
-            name: "teacher2",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e4u1y09";
-
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-            alert("success");
-        }
-
-    )
-    .catch((err) => console.log(err));
-    }
-
-    if(document.getElementById("teacher1").value!=document.getElementById("advisor").value&&document.getElementById("teacher1").value=="teacher1"){
-        var params = {
-            name: "teacher1",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e7llqyx";
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-            alert("success");
-        }
-
-    )
-    .catch((err) => {
-        alert("err");
-    });
-
-    }
-
-    if(document.getElementById("teacher1").value!=document.getElementById("advisor").value&&document.getElementById("teacher1").value=="teacher2"){
-        var params = {
-            name: "teacher2",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e4u1y09";
-
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-            alert("success");
-        }
-
-    )
-    .catch((err) => console.log(err));
-    }
-
-    if(document.getElementById("teacher2").value!=document.getElementById("advisor").value&&document.getElementById("teacher2").value=="teacher1"){
-        var params = {
-            name: "teacher1",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e7llqyx";
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-            alert("success");
-        }
-
-    )
-    .catch((err) => {
-        alert("err");
-    });
-
-    }
-    if(document.getElementById("teacher2").value!=document.getElementById("advisor").value&&document.getElementById("teacher2").value=="teacher2"){
-        var params = {
-            name: "teacher2",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e4u1y09";
-
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-            alert("success");
-        }
-
-    )
-    .catch((err) => console.log(err));
-
-    }
-
-}
-
-   
-</script>
-
-
-
-
 <script>
     function submitForm(event) {  // หยุดการส่งคำร้องข้อมูลแบบปกติของฟอร์ม
     const date = document.getElementById("date").value;
@@ -341,7 +188,7 @@
     const advisorApprove2 = "waiting";
     const cause1 = document.getElementById("cause1").value;
     const cause2 = document.getElementById("cause2").value;
-  
+
     const data = {
     studentID: studentId,
     studentFirstName: studentFirstName,
@@ -370,8 +217,6 @@
     cause2: cause2
     };
 
-  
-
 
     const jsonData = JSON.stringify(data);
 
@@ -390,151 +235,13 @@ xhr.onreadystatechange = function () {
     }
 
 };
-event.preventDefault();
+
 xhr.send(jsonData);
-
-
-if(document.getElementById("advisor").value=="teacher1"){
-        var params = {
-            name: "teacher1",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e7llqyx";
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-            toRequest();
-        }
-
-    )
-    .catch((err) => {
-        alert("err");
-    });
-    }
-
-    if(document.getElementById("advisor").value=="teacher2"){
-        var params = {
-            name: "teacher2",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e4u1y09";
-
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-          
-            toRequest();
-        }
-
-    )
-    .catch((err) => console.log(err));
-    }
-
-    if(document.getElementById("teacher1").value!=document.getElementById("advisor").value&&document.getElementById("teacher1").value=="teacher1"){
-        var params = {
-            name: "teacher1",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e7llqyx";
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-      
-            toRequest();
-        }
-
-    )
-    .catch((err) => {
-        alert("err");
-    });
-
-    }
-
-    if(document.getElementById("teacher1").value!=document.getElementById("advisor").value&&document.getElementById("teacher1").value=="teacher2"){
-        var params = {
-            name: "teacher2",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e4u1y09";
-
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-    
-            toRequest();
-        }
-
-    )
-    .catch((err) => console.log(err));
-    }
-
-    if(document.getElementById("teacher2").value!=document.getElementById("advisor").value&&document.getElementById("teacher2").value=="teacher1"){
-        var params = {
-            name: "teacher1",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e7llqyx";
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-      
-            toRequest();
-        }
-
-    )
-    .catch((err) => {
-        alert("err");
-    });
-
-    }
-    if(document.getElementById("teacher2").value!=document.getElementById("advisor").value&&document.getElementById("teacher2").value=="teacher2"){
-        var params = {
-            name: "teacher2",
-            message: "please approve or refuse",
-            studentID: document.getElementById("studentID").value,
-            studentFirstName: document.getElementById("firstName").value
-        };
-        const serviceID = "service_hjajl88";
-    const templateID = "template_e4u1y09";
-
-    emailjs
-    .send(serviceID,templateID, params)
-    .then(
-        (res) =>{
-       
-            toRequest();
-        }
-
-    )
-    .catch((err) => console.log(err));
-
-    }
-
-
+toRequest();
 alert('บันทึกเเล้ว');
-
-
-
+event.preventDefault();
+toRequest();
+return false
 }
 
 </script>
