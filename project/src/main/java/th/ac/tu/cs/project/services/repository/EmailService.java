@@ -1,4 +1,4 @@
-package th.ac.tu.cs.project.services.repository;
+/*package th.ac.tu.cs.project.services.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -22,4 +22,4 @@ public class EmailService {
 
         javaMailSender.send(message);
     }
-}
+}*/

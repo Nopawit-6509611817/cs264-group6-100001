@@ -127,8 +127,8 @@ public class RequestController {
             return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
     }
 
-    @Autowired
-    private EmailService emailService;
+    /*@Autowired
+    /*private EmailService emailService;
 
     @GetMapping("/check-teacher-approval")
     public ResponseEntity<String> checkTeacherApprovalAndSendEmail() {
@@ -151,7 +151,7 @@ public class RequestController {
     @Scheduled(cron = "0 0 0 * * ?")
     public void checkAndSendEmails() {
         checkTeacherApprovalAndSendEmail();
-    }
+    }*/
 }
 
 
