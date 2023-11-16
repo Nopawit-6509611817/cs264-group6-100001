@@ -1,12 +1,8 @@
-version 0.6.3   16/11 11.06
+version 1.0.0  16/11 20.00
 
 editor nopawit inon 6509611817
 
-new
-   + เยอะมากขก.เขียน
-
-edit
-   * เยอะมากขก.เขียน
+- sprint1 finished
 
 
 
