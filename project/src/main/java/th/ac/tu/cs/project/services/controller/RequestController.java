@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import th.ac.tu.cs.project.services.model.Request;
-import th.ac.tu.cs.project.services.repository.EmailService;
+//import th.ac.tu.cs.project.services.repository.EmailService;
 import th.ac.tu.cs.project.services.repository.RequestRepository;
 
 
