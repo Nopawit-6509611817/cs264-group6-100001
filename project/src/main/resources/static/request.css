@@ -263,3 +263,50 @@ ok{
 a{
     cursor: pointer;
 }
+.form-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS for userinfo section */
+.userinfo {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.userinfo label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.userinfo input[type="text"],
+.userinfo input[type="date"],
+.userinfo select {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.userinfo button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.userinfo button:hover {
+    background-color: #0056b3;
+}
+

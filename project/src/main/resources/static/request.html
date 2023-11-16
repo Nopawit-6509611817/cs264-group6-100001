@@ -39,7 +39,7 @@
 <div class="container">
 
 
-  
+
     <ul>
         <li><a onclick="toDashBoard()" id="ok">สำนักงานทะเบียนนักศึกษา</a></li>
         <li class="dropdown">
@@ -54,62 +54,65 @@
         <li><a href="#news" onclick="toTrackStatus()">ติดตามสถานะคำร้อง</a></li>
 
     </ul>
-    
+
     <!-- Add line break before the form tag -->
 
 
-   
+
 </div>
+<div class="form-container">
+    <form  id="userForm" onsubmit="submitForm(event)">
+        <section class="userinfo">
+            <label for="firstName">ชื่อ:</label>
+            <input type="text" id="firstName" name="firstName" required><br>
 
-<form  id="userForm" onsubmit="submitForm(event)">
-    <label for="firstName">ชื่อ:</label>
-    <input type="text" id="firstName" name="firstName" required><br>
+            <label for="lastName">นามสกุล:</label>
+            <input type="text" id="lastName" name="lastName" required><br>
 
-    <label for="lastName">นามสกุล:</label>
-    <input type="text" id="lastName" name="lastName" required><br>
+            <label for="studentID">เลขนักศึกษา:</label>
+            <input type="text" minlength="10" maxlength="10" id="studentID" name="studentID" required><br>
 
-    <label for="studentID">เลขนักศึกษา:</label>
-    <input type="number" id="studentID" name="studentID" required><br>
+            <label for="class">สาขา:</label>
+            <input type="text" id="class" name="class" required><br>
 
-    <label for="class">สาขา:</label>
-    <input type="text" id="class" name="class" required><br>
+            <label for="year">ปี:</label>
+            <input type="text" id="year" name="year" required><br>
 
-    <label for="year">ปี:</label>
-    <input type="number" id="year" name="year" required><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
 
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required><br>
+            <label for="advisor">อาจารย์ที่ปรึกษา:</label>
+            <input type="text" id="advisor" name="advisor" required><br>
 
-    <label for="lastName">อาจารย์ที่ปรึกษา:</label>
-    <input type="text" id="advisor" name="advisor" required><br>
+        </section>
+        <div>
+            <p>หากไม่ประสงค์เพิ่ม/ถอนในรายวิชาที่สองให้ใส่ "-" ในทุกช่อง</p>
+            <div class="k0">
+                <label for="d" class="k1">ลำดับ</label>
+                <label for="d" class="k1">รหัสวิชา</label>
+                <label for="d" class="k1">ชื่อวิชา</label>
+                <label for="d" class="k1">Section</label>
+                <label for="d" class="k1">วัน/เวลา</label>
+                <label for="d" class="k1">ชื่อผู้สอน</label>
+                <label for="d" class="k1">เหตุผล</label>
+                <label for="d" class="k1">เพิ่ม/ถอน</label>
+            </div>
 
-    <div>
-        <div class="k0">
-            <label for="d" class="k1">ลำดับ</label>
-            <label for="d" class="k1">รหัสวิชา</label>
-            <label for="d" class="k1">ชื่อวิชา</label>
-            <label for="d" class="k1">Section</label>
-            <label for="d" class="k1">วัน/เวลา</label>
-            <label for="d" class="k1">ชื่อผู้สอน</label>
-            <label for="d" class="k1">เหตุผล</label>
-            <label for="d" class="k1">เพิ่ม/ถอน</label>
+            <label for="d" class="k2">1</label>
+            <input id="subjectCode1" name="subjectCode1" class="reason" required></input>
+            <input id="subjectName1" name="subjectName1" class="reason" required></input>
+            <input id="section1" name="section1" class="reason" required></input>
+            <input id="dayTime1" name="dayTime1" class="reason" required></input>
+            <input id="teacher1" name="teacher1" class="reason" required></input>
+            <input id="cause1" name="cause1" class="reason"  required></input>
+            <select  id="type1" name="type1" onclick="permission1" class="permission1" required>
+                <option value=""></option>
+                <option value="เพิ่ม">เพิ่ม</option>
+                <option value="ถอน">ถอน</option>
+            </select>
         </div>
 
-        <label for="d" class="k2">1</label>
-        <input id="subjectCode1" name="subjectCode1" class="reason" required></input>
-        <input id="subjectName1" name="subjectName1" class="reason" required></input>
-        <input id="section1" name="section1" class="reason" required></input>
-        <input id="dayTime1" name="dayTime1" class="reason" required></input>
-        <input id="teacher1" name="teacher1" class="reason" required></input>
-        <input id="cause1" name="cause1" class="reason"  required></input>
-        <select  id="type1" name="type1" onclick="permission1" class="permission1" required>
-            <option value=""></option>
-            <option value="เพิ่ม">เพิ่ม</option>
-            <option  value="ถอน" >ถอน</option>
-        </select>
-    </div>
-
-    <label for="d" class="k2">2</label>
+        <label for="d" class="k2">2</label>
         <input id="subjectCode2" name="subjectCode2" class="reason" required></input>
         <input id="subjectName2" name="subjectName2" class="reason" required></input>
         <input id="section2" name="section2" class="reason" required></input>
@@ -120,12 +123,13 @@
             <option value=""></option>
             <option value="เพิ่ม">เพิ่ม</option>
             <option  value="ถอน" >ถอน</option>
+            <option  value="ไม่ประสงค์เพิ่ม/ถอน" >ถอน</option>
         </select>
-    </div><br>
+        <br>
 
-    <button type="submit" id="submit">ส่งคำร้อง</button>
-</form>
-
+        <button type="submit" id="submit">ส่งคำร้อง</button>
+    </form>
+</div>
 
 <script>
     function getQueryVariable(variable) {
