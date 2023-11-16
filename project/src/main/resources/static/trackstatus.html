@@ -78,7 +78,6 @@
         }
         else{
             document.getElementById("type1").innerHTML = "ถอน";
-            
         }
         if(data["advisorApprove1"]=="approve"&&data["teacherApprove1"]=="approve"){
             document.getElementById("status1").innerHTML = "approve";
@@ -94,7 +93,7 @@
                 document.getElementById("small-circle1").style.backgroundColor = "red";
             }
             else if(data["advisorApprove1"]=="refuse"&&data["teacherApprove1"]=="approve"){
-                document.getElementById("status1").innerHTML = "refusse";
+                document.getElementById("status1").innerHTML = "refusee";
                 document.getElementById("small-circle1").style.backgroundColor = "red";
             }
             else{
@@ -157,25 +156,25 @@
     <div id="topic"><p>ติดตามสถานะคำร้อง</p></div>
     <div id="display">
         <p class="detail">1</p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="subjectCode1"></p>
-        <p class="detail" style="margin-right: 25px;width: 120px;" id="subjectName1"></p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="section1"></p>
-        <p class="detail" style="margin-right: 25px;width: 180px;" id="dayTime1"></p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="teacher1"></p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="type1"></p>
-        <p class="detail" style="margin-right: 25px;" id="small-circle1"></p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="status1"></p>
+        <p class="detail" id="subjectCode1"></p>
+        <p class="detail" id="subjectName1"></p>
+        <p class="detail" id="section1"></p>
+        <p class="detail" id="dayTime1"></p>
+        <p class="detail" id="teacher1"></p>
+        <p class="detail" id="type1"></p>
+        <p class="detail" id="small-circle1"></p>
+        <p class="detail" id="status1"></p>
     </div>
     <div id="display">
         <p class="detail">2</p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="subjectCode2"></p>
-        <p class="detail" style="margin-right: 25px;width: 120px;" id="subjectName2"></p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="section2"></p>
-        <p class="detail" style="margin-right: 25px;width: 180px;" id="dayTime2"></p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="teacher2"></p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="type2"></p>
-        <p class="detail" style="margin-right: 25px;" id="small-circle2"></p>
-        <p class="detail" style="margin-right: 25px;width: 100px;" id="status2"></p>
+        <p class="detail" id="subjectCode2"></p>
+        <p class="detail" id="subjectName2"></p>
+        <p class="detail" id="section2"></p>
+        <p class="detail" id="dayTime2"></p>
+        <p class="detail" id="teacher2"></p>
+        <p class="detail" id="type2"></p>
+        <p class="detail" id="small-circle2"></p>
+        <p class="detail" id="status2"></p>
     </div>
   </div>
   <img class="img-web" src="picture/web.jpg" alt="web.jpg" width="1457" height="600">
