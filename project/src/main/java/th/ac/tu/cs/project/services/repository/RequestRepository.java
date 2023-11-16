@@ -29,6 +29,8 @@ public interface RequestRepository {
 
     List<Request> findByStudentIdForteacher(String teacherName);
 
+    List<Request> findRequestsByEmptyTeacherApprove();
+
 
     int deleteByStudentId(long studentID);
 

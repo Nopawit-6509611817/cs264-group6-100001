@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import th.ac.tu.cs.project.services.model.Request;
 
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -118,7 +119,15 @@ public class JdbcRequestRepository implements  RequestRepository{
         throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
     }
 
-
+    @Override
+    public List<Request> findRequestsByEmptyTeacherApprove() {
+        try {
+            return jdbcTemplate.query("SELECT * FROM request1 WHERE teacherApprove1 IS NULL OR teacherApprove2 IS NULL",
+                    BeanPropertyRowMapper.newInstance(Request.class));
+        } catch (IncorrectResultSizeDataAccessException e) {
+            return Collections.emptyList(); // Or handle the exception as needed
+        }
+    }
 
    
 }

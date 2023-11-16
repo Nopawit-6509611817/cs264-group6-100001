@@ -3,6 +3,7 @@ package th.ac.tu.cs.project.services.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import th.ac.tu.cs.project.services.model.Request;
+import th.ac.tu.cs.project.services.repository.EmailService;
 import th.ac.tu.cs.project.services.repository.RequestRepository;
 
 
@@ -125,8 +127,33 @@ public class RequestController {
             return new ResponseEntity<String>("success",HttpStatus.NO_CONTENT);
     }
 
+    @Autowired
+    private EmailService emailService;
 
+    @GetMapping("/check-teacher-approval")
+    public ResponseEntity<String> checkTeacherApprovalAndSendEmail() {
+        List<Request> requests = requestRepository.findRequestsByEmptyTeacherApprove();
+
+        for (Request request : requests) {
+            sendEmailToTeachers(request.getTeacher1(), request.getTeacher2());
+            //will be implementing in sprint2
+            //requestRepository.updateTeacherApprovalStatus(request.getStudentID());
+        }
+
+        return new ResponseEntity<>("Emails sent successfully.", HttpStatus.OK);
+    }
+
+    private void sendEmailToTeachers(String teacher1, String teacher2) {
+        emailService.sendEmailToTeacher(teacher1);
+        emailService.sendEmailToTeacher(teacher2);
+    }
+
+    @Scheduled(cron = "0 0 0 * * ?")
+    public void checkAndSendEmails() {
+        checkTeacherApprovalAndSendEmail();
+    }
+}
 
 
     
-}
+
